@@ -17,7 +17,8 @@ const Navbar = () => {
 						type: "spring",
 						stiffness: 500,
 						damping: 18,
-					}}>
+					}}
+					className="text-black dark:text-neutral-300">
 					<FaLinkedin />
 				</motion.a>
 				<motion.a
@@ -28,7 +29,8 @@ const Navbar = () => {
 						type: "spring",
 						stiffness: 500,
 						damping: 18,
-					}}>
+					}}
+					className="text-black dark:text-neutral-300">
 					<FaGithub />
 				</motion.a>
 			</div>

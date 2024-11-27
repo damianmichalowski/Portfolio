@@ -10,7 +10,7 @@ const Contact = () => {
 				whileInView={{ opacity: 1, x: 0 }}
 				initial={{ opacity: 0, x: -100 }}
 				transition={{ duration: 0.5 }}>
-				<h2 className="my-20 text-center text-4xl">Get in Touch</h2>
+				<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">Get in Touch</h2>
 				<div className="text-center tracking-tighter">
 					<ContactForm />
 				</div>

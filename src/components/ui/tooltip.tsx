@@ -18,7 +18,7 @@ const TooltipContent = React.forwardRef<
 			ref={ref}
 			sideOffset={sideOffset}
 			className={cn(
-				"relative z-50 overflow-hidden rounded-md px-[1px] py-[1px] text-sm text-white",
+				"relative z-50 overflow-hidden rounded-md px-[1px] py-[1px] text-sm",
 				className
 			)}
 			asChild
@@ -37,8 +37,8 @@ const TooltipContent = React.forwardRef<
 				}}
 				exit={{ opacity: 0, y: 20, scale: 0.6 }}
 				className="relative inline-flex h-8 overflow-hidden rounded-md p-[1px] focus:outline-none">
-				<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-				<span className="inline-flex h-full w-full items-center justify-center rounded-md bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+				<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#393BB2_0%,#E2CBFF_50%,#393BB2_100%)]" />
+				<span className="inline-flex h-full w-full items-center justify-center rounded-md bg-white dark:bg-slate-950 px-3 py-1 text-sm font-medium text-gray-900 dark:text-white backdrop-blur-3xl">
 					{props.children}
 				</span>
 			</motion.div>

@@ -9,18 +9,21 @@ Currently, two official plugins are available:
 
 # to do
 - contact form
-- light/dark theme
+
 - descriptions
 - images
 - conect project links
 - font size check
 - tags check
 - reference download
-- add cofetti on send message
+
 - add favicon
 - summary text etc years of coding projects technologies new ideas
+- wyróznic w opise technolgoie w hero
 
 #done
+- add cofetti on send message
+- light/dark theme
 - quick navigation 
 - floating dock
 - conect navbar links github and linkedin

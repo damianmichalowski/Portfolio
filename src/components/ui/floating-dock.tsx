@@ -104,7 +104,7 @@ const FloatingDockDesktop = ({
 			onMouseMove={(e) => mouseY.set(e.pageY)}
 			onMouseLeave={() => mouseY.set(Infinity)}
 			className={cn(
-				"opacity-95 hidden md:flex flex-col gap-4 items-start rounded-2xl bg-gray-50 dark:bg-neutral-900 py-3 px-[10px] overflow-visible w-[58px]",
+				"opacity-95 hidden md:flex flex-col gap-4 items-start rounded-2xl bg-gray-100 dark:bg-neutral-900 py-3 px-[10px] overflow-visible w-[58px]",
 				className
 			)}>
 			{items.map((item) => (
@@ -178,7 +178,7 @@ function IconContainer({
 			}}
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
-			className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative group hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
+			className="aspect-square rounded-full bg-gray-300 dark:bg-neutral-800 flex items-center justify-center relative group hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors">
 			{hovered && (
 				<div className="absolute left-full ml-2 px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 w-fit text-xs">
 					{title}

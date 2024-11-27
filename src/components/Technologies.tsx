@@ -43,7 +43,7 @@ const TooltipWithMotion = ({
 				variants={iconVariant(duration)}
 				initial="initial"
 				animate="animate"
-				className="rounded-2xl border-4 border-neutral-800 p-4">
+				className="rounded-2xl border-4 border-neutral-200 dark:border-neutral-800 bg-white dark:bg-transparent p-4">
 				{children}
 			</motion.div>
 		</TooltipTrigger>
@@ -62,8 +62,10 @@ const Technologies = () => {
 	return (
 		<div
 			id="technologies"
-			className=" border-b border-neutral-800 pb-40">
-			<h2 className="my-20 text-center text-4xl">Technologies</h2>
+			className="border-b border-neutral-300 dark:border-neutral-800 pb-40">
+			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
+				Technologies
+			</h2>
 			<TooltipProvider delayDuration={100}>
 				<motion.div
 					whileInView={{ opacity: 1, y: 0 }}

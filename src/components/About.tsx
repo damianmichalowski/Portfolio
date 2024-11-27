@@ -5,10 +5,10 @@ const About = () => {
 	return (
 		<div
 			id="about"
-			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900">
-			<h2 className="my-20 text-center text-4xl">
+			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900">
+			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				About
-				<span className="text-neutral-500"> Me</span>
+				<span className="text-gray-500 dark:text-neutral-500"> Me</span>
 			</h2>
 			<div className="flex flex-wrap">
 				<motion.div
@@ -17,7 +17,11 @@ const About = () => {
 					transition={{ duration: 0.5 }}
 					className="w-full lg:w-1/2 lg:p-8">
 					<div className="flex items-center justify-center">
-						<img className="rounded-2xl" src={IMAGES.about} alt="about" />
+						<img
+							className="rounded-2xl border border-neutral-200 dark:border-neutral-800"
+							src={IMAGES.about}
+							alt="about"
+						/>
 					</div>
 				</motion.div>
 				<motion.div
@@ -26,7 +30,9 @@ const About = () => {
 					transition={{ duration: 0.5 }}
 					className="w-full lg:w-1/2">
 					<div className="flex justify-center lg:justify-start">
-						<p className="my-2 max-w-xl py-6 text-justify">{ABOUT_TEXT}</p>
+						<p className="my-2 max-w-xl py-6 text-justify text-gray-700 dark:text-neutral-300">
+							{ABOUT_TEXT}
+						</p>
 					</div>
 				</motion.div>
 			</div>

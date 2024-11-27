@@ -128,20 +128,12 @@ export function ContactForm({
 			className={cn(
 				"max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8",
 				!removeBackground &&
-					"shadow-input bg-transparent dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-800"
-			)}
-			style={
-				!removeBackground
-					? {
-							background:
-								"linear-gradient(135deg, rgba(23, 23, 23, 0.5), rgba(45, 25, 45, 0.5))", // Dark with purple tint
-					  }
-					: undefined
-			}>
+					"shadow-input bg-gray-100/80 dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-200 dark:border-neutral-800"
+			)}>
 			<form ref={form} onSubmit={sendEmail}>
 				<div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
 					<LabelInputContainer>
-						<Label htmlFor="firstname" className="text-neutral-300">
+						<Label htmlFor="firstname" className="text-gray-700 dark:text-neutral-300">
 							First name
 						</Label>
 						<Input
@@ -149,14 +141,14 @@ export function ContactForm({
 							name="user_name"
 							placeholder="Will"
 							type="text"
-							className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
+							className="bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-gray-900 dark:text-neutral-100"
 						/>
 						{errors.user_name && (
-							<span className="text-pink-500 text-sm">{errors.user_name}</span>
+							<span className="text-red-500 text-sm">{errors.user_name}</span>
 						)}
 					</LabelInputContainer>
 					<LabelInputContainer>
-						<Label htmlFor="lastname" className="text-neutral-300">
+						<Label htmlFor="lastname" className="text-gray-700 dark:text-neutral-300">
 							Last name
 						</Label>
 						<Input
@@ -164,18 +156,16 @@ export function ContactForm({
 							name="user_lastname"
 							placeholder="Smith"
 							type="text"
-							className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
+							className="bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-gray-900 dark:text-neutral-100"
 						/>
 						{errors.user_lastname && (
-							<span className="text-pink-500 text-sm">
-								{errors.user_lastname}
-							</span>
+							<span className="text-red-500 text-sm">{errors.user_lastname}</span>
 						)}
 					</LabelInputContainer>
 				</div>
 
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="email" className="text-neutral-300">
+					<Label htmlFor="email" className="text-gray-700 dark:text-neutral-300">
 						Email Address
 					</Label>
 					<Input
@@ -183,15 +173,15 @@ export function ContactForm({
 						name="user_email"
 						placeholder="example@gmail.com"
 						type="email"
-						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
+						className="bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-gray-900 dark:text-neutral-100"
 					/>
 					{errors.user_email && (
-						<span className="text-pink-500 text-sm">{errors.user_email}</span>
+						<span className="text-red-500 text-sm">{errors.user_email}</span>
 					)}
 				</LabelInputContainer>
 
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="phone" className="text-neutral-300">
+					<Label htmlFor="phone" className="text-gray-700 dark:text-neutral-300">
 						Phone Number
 					</Label>
 					<Input
@@ -199,34 +189,34 @@ export function ContactForm({
 						name="user_phone"
 						placeholder="123-456-7890"
 						type="text"
-						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
+						className="bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-gray-900 dark:text-neutral-100"
 					/>
 					{errors.user_phone && (
-						<span className="text-pink-500 text-sm">{errors.user_phone}</span>
+						<span className="text-red-500 text-sm">{errors.user_phone}</span>
 					)}
 				</LabelInputContainer>
 
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="message" className="text-neutral-300">
+					<Label htmlFor="message" className="text-gray-700 dark:text-neutral-300">
 						Message
 					</Label>
 					<Textarea
 						id="message"
 						name="user_message"
 						placeholder="Your message here..."
-						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200 min-h-[120px] focus-visible:ring-neutral-600"
+						className="bg-white dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-gray-900 dark:text-neutral-100 min-h-[120px] focus-visible:ring-neutral-300 dark:focus-visible:ring-neutral-600"
 					/>
 					{errors.user_message && (
-						<span className="text-pink-500 text-sm">{errors.user_message}</span>
+						<span className="text-red-500 text-sm">{errors.user_message}</span>
 					)}
 				</LabelInputContainer>
 
 				<Button
 					type="submit"
 					disabled={isLoading}
-					className="w-full relative inline-flex h-12 overflow-hidden rounded-md p-[1px] text-sm font-medium text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+					className="w-full relative inline-flex h-12 overflow-hidden rounded-md p-[1px] text-sm font-medium shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900">
 					<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-					<span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-slate-950 px-6 py-3 text-sm font-medium text-white shadow-lg backdrop-blur-3xl">
+					<span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-white dark:bg-slate-950 px-6 py-3 text-sm font-medium text-gray-900 dark:text-white shadow-lg backdrop-blur-3xl">
 						<span className="relative flex items-center z-10">
 							{isLoading ? "Sending..." : "Submit"}
 							{isLoading && <Loader2 className="ml-2 animate-spin" />}

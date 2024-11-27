@@ -17,9 +17,9 @@ export function ModeToggle() {
 				onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
 			/>
 			{theme === "dark" ? (
-				<FaMoon/>
+				<FaMoon className="text-neutral-300" />
 			) : (
-				<FaSun />
+				<FaSun className="text-black" />
 			)}
 		</div>
 	);

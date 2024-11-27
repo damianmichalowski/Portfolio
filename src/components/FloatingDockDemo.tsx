@@ -28,42 +28,42 @@ export function FloatingDockDemo() {
 		{
 			title: "Hero",
 			icon: (
-				<IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconHome className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#hero",
 		},
 		{
 			title: "About",
 			icon: (
-				<IconInfoSquare className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconInfoSquare className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#about",
 		},
 		{
 			title: "Technologies",
 			icon: (
-				<IconStack2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconStack2 className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#technologies",
 		},
 		{
 			title: "Experience",
 			icon: (
-				<IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconCode className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#experience",
 		},
 		{
 			title: "Projects",
 			icon: (
-				<IconPresentation className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconPresentation className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#projects",
 		},
 		{
 			title: "Contact",
 			icon: (
-				<IconPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+				<IconPhone className="h-full w-full text-gray-700 dark:text-neutral-300" />
 			),
 			href: "#contact",
 		},
