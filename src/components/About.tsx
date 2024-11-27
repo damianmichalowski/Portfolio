@@ -7,8 +7,7 @@ const About = () => {
 			id="about"
 			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
-				About
-				<span className="text-gray-500 dark:text-neutral-500"> Me</span>
+				About Me
 			</h2>
 			<div className="flex flex-wrap">
 				<motion.div
