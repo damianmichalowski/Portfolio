@@ -25,7 +25,7 @@ export function DialogContactForm({ isOpen, onClose }: DialogContactFormProps) {
 
 	return (
 		<Dialog open={isOpen} onOpenChange={onClose}>
-			<DialogContent className="bg-white dark:bg-neutral-900">
+			<DialogContent className="bg-white dark:bg-neutral-900 w-[90%]">
 				<DialogHeader>
 					<DialogTitle className="text-gray-900 dark:text-white">Get in touch</DialogTitle>
 				</DialogHeader>

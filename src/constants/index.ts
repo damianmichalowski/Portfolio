@@ -37,7 +37,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
 	{
 		title: "Movies Browser 🎬",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/movies-browser.png",
 		description:
 			"Movies Browser is a simple site that contains all your favorite movies. You can search for a movie or an actor on it.",
 		technologies: [
@@ -46,65 +46,62 @@ export const PROJECTS = [
 			"JavaScript (ES6+)",
 			"Styled Components",
 			"CSS",
-			"HTML",
 		],
 		link: "https://marcin-malek.github.io/movies-browser/#/movies/page=1",
+		github: "https://github.com/damianmichalowski/Movies-Browser",
 	},
 	{
 		title: "Internal Banking System",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/bzone.png",
 		description:
-			"Project at SKILL AND CHILL, A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-		technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+			"Contributed to Business Zone, a comprehensive procurement platform (P2P) at SKILL AND CHILL. The system features budget planning, supplier management, purchase order processing, document archiving, and HR resources. Implemented with multi-language support and advanced reporting capabilities.",
+		technologies: ["React", "Javascript", "Sass", "SQL", "CSS", "HTML"],
 		link: "https://business-zone.eu/pl/",
 	},
 	{
 		title: "Forex High-Frequency Trading Application",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/forex.png",
 		description:
-			"Short-term project at SoftProdukt, An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-		technologies: ["HTML", "CSS", "Angular", "Firebase"],
+			"Developed at SoftProdukt, this application assists traders in market analysis and trading automation. Features include customizable trading settings, automated process management, comprehensive data analysis tools, and trading strategy optimization.",
+		technologies: ["JavaScript", "HTMX", "Sass", "CSS", "Django"],
 		link: "../assets/documents/reference_softProdukt.pdf",
 	},
 	{
 		title: "Portfolio Website",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/portfolio.png",
 		description:
-			"A personal portfolio website showcasing projects, skills, and contact information.",
-		technologies: ["React", "Typescript", "Tailwind", "HTML", "CSS"],
+			"A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include dark/light theme switching, smooth animations using Framer Motion, a floating navigation dock, contact form integration with EmailJS, and interactive UI components. The site showcases my projects, skills, and professional experience with a clean, minimalist design.",
+		technologies: ["React", "Typescript", "Tailwind"],
 		link: "#hero",
+		github: "https://github.com/damianmichalowski/Portfolio",
 	},
 	{
 		title: "Anime Vault",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/anime.png",
 		description:
-			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-		technologies: ["HTML", "CSS", "Tailwind"],
+			"An anime discovery platform featuring infinite scroll functionality and a search system. Users can explore a vast collection of anime titles, view details, and find new series through an intuitive interface powered by the Shikimori API.",
+		technologies: ["NEXT.JS", "CSS", "Tailwind"],
 		link: "https://anime-vault-black.vercel.app/",
+		github: "https://github.com/damianmichalowski/Anime-Vault",
 	},
 	{
 		title: "Rocket Hero",
-		image: "../../assets/projects/project-3.jpg",
+		image: "../../assets/projects/rocket-hero.png",
 		description:
-			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-		technologies: ["HTML", "CSS", "Tailwind"],
+			"A space-themed landing page showcasing a fictional rocket company with sleek, modern aesthetics. Built to master Tailwind CSS fundamentals, featuring dynamic theme switching that respects system preferences, full-height responsive sections  - all implemented using Tailwind's utility-first approach.",
+		technologies: ["Tailwind", "HTML"],
 		link: "https://rocket-hero.onrender.com/",
+		github: "https://github.com/damianmichalowski/Rocket-hero",
 	},
 	{
 		title: "To do list",
-		image: "../../assets/projects/project-3.jpg",
-		description:
-			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-		technologies: ["React", "CSS", "Tailwind"],
+		image: "../../assets/projects/todo.png",
+		description: "A clean and intuitive task management application built with React and Tailwind CSS. Features include task creation, completion tracking, and browser-based storage for persistent data across sessions, all wrapped in a modern, responsive interface. 😉",
+		technologies: ["React", "Tailwind"],
 		link: "https://react-todo-list-2wsr.onrender.com/",
+		github: "https://github.com/damianmichalowski/react-todo-list",
 	},
 ];
-
-export const CONTACT = {
-	address: "Warsaw, Poland",
-	phoneNo: "+48 515 316 194",
-	email: "damianmichalowskidm@gmail.com",
-};
 
 export const SOCIAL_MEDIA = {
 	linkedin: "https://www.linkedin.com/in/damian-michałowski-6b66a5243",
