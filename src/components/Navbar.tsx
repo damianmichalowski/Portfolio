@@ -2,13 +2,13 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { SOCIAL_MEDIA } from "../constants";
+import { ModeToggle } from "./mode-toggle";
+
 const Navbar = () => {
 	return (
-		<div className="mb-20 flex items-center justify-between py-6">
-			<div className="flex flex-shrink-0 items-center">
-				{/* <p className="text-3xl text-neutral-0 font-bold mx-2 w-10">Dm</p> */}
-			</div>
+		<div id="hero" className="mb-20 flex items-center justify-end py-6">
 			<div className="m-8 flex items-center justify-center gap-4 text-2xl">
+				<ModeToggle />
 				<motion.a
 					href={SOCIAL_MEDIA.linkedin}
 					whileHover={{ scale: 1.2 }}

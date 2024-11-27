@@ -1,4 +1,3 @@
-import { forwardRef } from 'react';
 import { HERO_CONTENT } from "../constants";
 import { motion } from "framer-motion";
 import HeroButtons from "./HeroButtons";
@@ -12,9 +11,10 @@ const variants = (delay: number) => ({
 	},
 });
 
-const Hero = forwardRef<HTMLDivElement>((props, ref) => {
+const Hero = () => {
 	return (
-		<div ref={ref} className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900 pb-4 lg:mb-35">
+		<div
+			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900 pb-4 lg:mb-35">
 			<div className="flex flex-wrap">
 				<div className="w-full lg:w-1/2 mb-16 lg:mb-0">
 					<div className="flex flex-col items-start lg:items-start ">
@@ -62,6 +62,6 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => {
 			</div>
 		</div>
 	);
-});
+};
 
 export default Hero;

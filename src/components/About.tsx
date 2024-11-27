@@ -1,10 +1,11 @@
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
-import { forwardRef } from 'react';
 import { IMAGES } from "../constants";
-const About = forwardRef<HTMLDivElement>((props, ref) => {
+const About = () => {
 	return (
-		<div ref={ref} className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900">
+		<div
+			id="about"
+			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900">
 			<h2 className="my-20 text-center text-4xl">
 				About
 				<span className="text-neutral-500"> Me</span>
@@ -31,6 +32,6 @@ const About = forwardRef<HTMLDivElement>((props, ref) => {
 			</div>
 		</div>
 	);
-});
+};
 
 export default About;

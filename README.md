@@ -25,3 +25,4 @@ Currently, two official plugins are available:
 - floating dock
 - conect navbar links github and linkedin
 - resume download
+- tooltip to technologies

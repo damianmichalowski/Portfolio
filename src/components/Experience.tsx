@@ -1,11 +1,11 @@
-import React from "react";
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
-import { forwardRef } from 'react';
 
-const Experience = forwardRef<HTMLDivElement>((props, ref) => {
+const Experience = () => {
 	return (
-		<div ref={ref} className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900 pb-4">
+		<div
+			id="experience"
+			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900 pb-4">
 			<h2 className="my-20 text-center text-4xl"> Experience</h2>
 			<div>
 				{EXPERIENCES.map((experience, index) => (
@@ -44,6 +44,6 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
 			</div>
 		</div>
 	);
-});
+};
 
 export default Experience;

@@ -1,12 +1,11 @@
-import React from "react";
-import { CONTACT } from "../constants";
 import { motion } from "framer-motion";
 import { ContactForm } from "./ContactForm";
-import { forwardRef } from 'react';
 
-const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+const Contact = () => {
 	return (
-		<div ref={ref}>
+		<div
+			id="contact"
+			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-900 pb-20">
 			<motion.div
 				whileInView={{ opacity: 1, x: 0 }}
 				initial={{ opacity: 0, x: -100 }}
@@ -19,6 +18,6 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
 			</motion.div>
 		</div>
 	);
-});
+};
 
 export default Contact;
