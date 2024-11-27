@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingDockDemo } from "./components/FloatingDockDemo";
+import { Toaster } from "./components/ui/toaster";
 
 const App = () => {
 	return (
@@ -31,6 +32,7 @@ const App = () => {
 					<Contact />
 				</div>
 			</div>
+			<Toaster />
 		</ThemeProvider>
 	);
 };

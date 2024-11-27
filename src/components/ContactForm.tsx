@@ -1,16 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "../components/ui/label";
 import { Input } from "../components/ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "./ui/textarea";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { Loader2 } from "lucide-react";
+import { Button } from "./ui/button";
+import confetti from "canvas-confetti";
+import { useToast } from "@/hooks/use-toast";
 
-export function ContactForm() {
+interface FormErrors {
+	user_name?: string;
+	user_lastname?: string;
+	user_email?: string;
+	user_phone?: string;
+	user_message?: string;
+}
+
+export function ContactForm({
+	onClose,
+	removeBackground = false,
+}: {
+	onClose?: () => void;
+	removeBackground?: boolean;
+}) {
+	const [isLoading, setIsLoading] = useState(false);
+	const [errors, setErrors] = useState<FormErrors>({});
 	const form = useRef<HTMLFormElement>(null);
+	const { toast } = useToast();
+
+	const validateForm = (): boolean => {
+		const newErrors: FormErrors = {};
+		let isFormValid = true;
+
+		if (!form.current?.user_name.value) {
+			newErrors.user_name = "First name is required";
+			isFormValid = false;
+		}
+
+		if (!form.current?.user_lastname.value) {
+			newErrors.user_lastname = "Last name is required";
+			isFormValid = false;
+		}
+
+		if (!form.current?.user_email.value) {
+			newErrors.user_email = "Email is required";
+			isFormValid = false;
+		} else if (!/\S+@\S+\.\S+/.test(form.current.user_email.value)) {
+			newErrors.user_email = "Email is invalid";
+			isFormValid = false;
+		}
+
+		if (!form.current?.user_phone.value) {
+			newErrors.user_phone = "Phone number is required";
+			isFormValid = false;
+		}
+
+		if (!form.current?.user_message.value) {
+			newErrors.user_message = "Message is required";
+			isFormValid = false;
+		}
+
+		setErrors(newErrors);
+		return isFormValid;
+	};
 
 	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		if (!validateForm()) return;
+
+		setIsLoading(true);
 
 		if (form.current) {
 			emailjs
@@ -25,71 +85,154 @@ export function ContactForm() {
 				.then(
 					() => {
 						console.log("SUCCESS!");
+						const button = document.querySelector('button[type="submit"]');
+						if (button) {
+							const rect = button.getBoundingClientRect();
+							const x = rect.left + rect.width / 2;
+							const y = rect.top + rect.height / 2;
+							confetti({
+								origin: {
+									x: x / window.innerWidth,
+									y: y / window.innerHeight,
+								},
+								spread: 70,
+								scalar: 1.2,
+								particleCount: 100,
+								startVelocity: 30,
+							});
+						}
+						toast({
+							title: "Thank You for Reaching Out!",
+							description:
+								"Your message has been successfully sent. I'll get back to you as soon as possible. Have a great day!",
+						});
+						onClose?.();
+						form.current?.reset();
+						setIsLoading(false);
 					},
 					(error) => {
 						console.log("FAILED...", error.text);
+						toast({
+							title: "Message Delivery Failed",
+							description:
+								"Unfortunately, we couldn't send your message. Please try again later.",
+						});
+						setIsLoading(false);
 					}
 				);
 		}
 	};
 
 	return (
-		<div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-			<form ref={form} className="my-8" onSubmit={sendEmail}>
+		<div
+			className={cn(
+				"max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8",
+				!removeBackground &&
+					"shadow-input bg-transparent dark:bg-neutral-900/50 backdrop-blur-sm border border-neutral-800"
+			)}
+			style={
+				!removeBackground
+					? {
+							background:
+								"linear-gradient(135deg, rgba(23, 23, 23, 0.5), rgba(45, 25, 45, 0.5))", // Dark with purple tint
+					  }
+					: undefined
+			}>
+			<form ref={form} onSubmit={sendEmail}>
 				<div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
 					<LabelInputContainer>
-						<Label htmlFor="firstname">First name</Label>
+						<Label htmlFor="firstname" className="text-neutral-300">
+							First name
+						</Label>
 						<Input
 							id="firstname"
 							name="user_name"
-							placeholder="Tyler"
+							placeholder="Will"
 							type="text"
+							className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
 						/>
+						{errors.user_name && (
+							<span className="text-pink-500 text-sm">{errors.user_name}</span>
+						)}
 					</LabelInputContainer>
 					<LabelInputContainer>
-						<Label htmlFor="lastname">Last name</Label>
+						<Label htmlFor="lastname" className="text-neutral-300">
+							Last name
+						</Label>
 						<Input
 							id="lastname"
 							name="user_lastname"
-							placeholder="Durden"
+							placeholder="Smith"
 							type="text"
+							className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
 						/>
+						{errors.user_lastname && (
+							<span className="text-pink-500 text-sm">
+								{errors.user_lastname}
+							</span>
+						)}
 					</LabelInputContainer>
 				</div>
+
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="email">Email Address</Label>
+					<Label htmlFor="email" className="text-neutral-300">
+						Email Address
+					</Label>
 					<Input
 						id="email"
 						name="user_email"
-						placeholder="projectmayhem@fc.com"
+						placeholder="example@gmail.com"
 						type="email"
+						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
 					/>
+					{errors.user_email && (
+						<span className="text-pink-500 text-sm">{errors.user_email}</span>
+					)}
 				</LabelInputContainer>
+
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="phone">Phone Number</Label>
+					<Label htmlFor="phone" className="text-neutral-300">
+						Phone Number
+					</Label>
 					<Input
 						id="phone"
 						name="user_phone"
 						placeholder="123-456-7890"
 						type="text"
+						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200"
 					/>
+					{errors.user_phone && (
+						<span className="text-pink-500 text-sm">{errors.user_phone}</span>
+					)}
 				</LabelInputContainer>
+
 				<LabelInputContainer className="mb-4">
-					<Label htmlFor="message">Message</Label>
+					<Label htmlFor="message" className="text-neutral-300">
+						Message
+					</Label>
 					<Textarea
 						id="message"
 						name="user_message"
 						placeholder="Your message here..."
-						className="flex h-32 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+						className="bg-neutral-800/50 border-neutral-700 placeholder:text-neutral-500 text-neutral-200 min-h-[120px] focus-visible:ring-neutral-600"
 					/>
+					{errors.user_message && (
+						<span className="text-pink-500 text-sm">{errors.user_message}</span>
+					)}
 				</LabelInputContainer>
 
-				<button
-					className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-					type="submit">
-					Submit
-					<BottomGradient />
-				</button>
+				<Button
+					type="submit"
+					disabled={isLoading}
+					className="w-full relative inline-flex h-12 overflow-hidden rounded-md p-[1px] text-sm font-medium text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+					<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+					<span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-md bg-slate-950 px-6 py-3 text-sm font-medium text-white shadow-lg backdrop-blur-3xl">
+						<span className="relative flex items-center z-10">
+							{isLoading ? "Sending..." : "Submit"}
+							{isLoading && <Loader2 className="ml-2 animate-spin" />}
+						</span>
+					</span>
+				</Button>
 			</form>
 		</div>
 	);
@@ -98,8 +241,8 @@ export function ContactForm() {
 const BottomGradient = () => {
 	return (
 		<>
-			<span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-			<span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+			<span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-pink-500 to-transparent" />
+			<span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
 		</>
 	);
 };

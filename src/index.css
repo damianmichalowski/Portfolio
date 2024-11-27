@@ -87,9 +87,3 @@ html {
 [id] {
 	scroll-margin-top: 5rem;
 }
-
-/* .widescreen\:section-min-height,
-.tallscreen\:section-min-height {
-	scroll-margin-top: 0;
-	scroll-snap-align: start;
-} */
