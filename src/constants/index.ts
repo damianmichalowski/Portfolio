@@ -48,6 +48,7 @@ export const PROJECTS = [
 			"CSS",
 			"HTML",
 		],
+		link: "https://marcin-malek.github.io/movies-browser/#/movies/page=1",
 	},
 	{
 		title: "Internal Banking System",
@@ -55,6 +56,7 @@ export const PROJECTS = [
 		description:
 			"Project at SKILL AND CHILL, A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
 		technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+		link: "https://business-zone.eu/pl/",
 	},
 	{
 		title: "Forex High-Frequency Trading Application",
@@ -62,20 +64,15 @@ export const PROJECTS = [
 		description:
 			"Short-term project at SoftProdukt, An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
 		technologies: ["HTML", "CSS", "Angular", "Firebase"],
+		link: "../assets/documents/reference_softProdukt.pdf",
 	},
 	{
 		title: "Portfolio Website",
 		image: "../../assets/projects/project-3.jpg",
 		description:
 			"A personal portfolio website showcasing projects, skills, and contact information.",
-		technologies: ["React", "Typescript", "Tailwind", "HTML", "CSS", ],
-	},
-	{
-		title: "Rocket Hero",
-		image: "../../assets/projects/project-3.jpg",
-		description:
-			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-		technologies: ["HTML", "CSS", "Tailwind"],
+		technologies: ["React", "Typescript", "Tailwind", "HTML", "CSS"],
+		link: "#hero",
 	},
 	{
 		title: "Anime Vault",
@@ -83,6 +80,15 @@ export const PROJECTS = [
 		description:
 			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
 		technologies: ["HTML", "CSS", "Tailwind"],
+		link: "https://anime-vault-black.vercel.app/",
+	},
+	{
+		title: "Rocket Hero",
+		image: "../../assets/projects/project-3.jpg",
+		description:
+			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
+		technologies: ["HTML", "CSS", "Tailwind"],
+		link: "https://rocket-hero.onrender.com/",
 	},
 	{
 		title: "To do list",
@@ -90,6 +96,7 @@ export const PROJECTS = [
 		description:
 			"A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
 		technologies: ["React", "CSS", "Tailwind"],
+		link: "https://react-todo-list-2wsr.onrender.com/",
 	},
 ];
 
@@ -106,6 +113,7 @@ export const SOCIAL_MEDIA = {
 
 export const DOCUMENTS = {
 	resume: "../assets/documents/Damian_Michałowski_Resume.pdf",
+	referenceSoftProdukt: "../assets/documents/reference_softProdukt.pdf",
 };
 
 export const IMAGES = {

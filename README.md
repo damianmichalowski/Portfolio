@@ -8,7 +8,6 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # to do
-- contact form
 
 - descriptions
 - images
@@ -22,6 +21,7 @@ Currently, two official plugins are available:
 - wyróznic w opise technolgoie w hero
 
 #done
+- contact form
 - add cofetti on send message
 - light/dark theme
 - quick navigation 
