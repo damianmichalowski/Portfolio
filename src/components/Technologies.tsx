@@ -62,7 +62,7 @@ const Technologies = () => {
 	return (
 		<div
 			id="technologies"
-			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-800 pb-40">
+			className=" border-b border-neutral-800 pb-40">
 			<h2 className="my-20 text-center text-4xl">Technologies</h2>
 			<TooltipProvider delayDuration={100}>
 				<motion.div

@@ -104,7 +104,7 @@ const FloatingDockDesktop = ({
 			onMouseMove={(e) => mouseY.set(e.pageY)}
 			onMouseLeave={() => mouseY.set(Infinity)}
 			className={cn(
-				"opacity-95 hidden md:flex flex-col gap-4 items-center rounded-2xl bg-gray-50 dark:bg-neutral-900 py-4 px-3",
+				"opacity-95 hidden md:flex flex-col gap-4 items-start rounded-2xl bg-gray-50 dark:bg-neutral-900 py-3 px-[10px] overflow-visible w-[58px]",
 				className
 			)}>
 			{items.map((item) => (
@@ -136,76 +136,69 @@ function IconContainer({
 		return Math.abs(val - scrollY - center);
 	});
 
-	let widthTransform = useTransform(distance, [0, 100], [60, 40]);
-	let heightTransform = useTransform(distance, [0, 100], [60, 40]);
-	let widthTransformIcon = useTransform(distance, [0, 100], [30, 20]);
-	let heightTransformIcon = useTransform(distance, [0, 100], [30, 20]);
+	let widthTransform = useTransform(distance, [0, 50, 100], [70, 50, 40]);
+	let heightTransform = useTransform(distance, [0, 50, 100], [70, 50, 40]);
+	let widthTransformIcon = useTransform(distance, [0, 50, 100], [35, 25, 20]);
+	let heightTransformIcon = useTransform(distance, [0, 50, 100], [35, 25, 20]);
 
 	let width = useSpring(widthTransform, {
 		mass: 0.1,
-		stiffness: 150,
-		damping: 12,
+		stiffness: 250,
+		damping: 15,
 	});
 	let height = useSpring(heightTransform, {
 		mass: 0.1,
-		stiffness: 150,
-		damping: 12,
+		stiffness: 250,
+		damping: 15,
 	});
 
 	let widthIcon = useSpring(widthTransformIcon, {
 		mass: 0.1,
-		stiffness: 150,
-		damping: 12,
+		stiffness: 250,
+		damping: 15,
 	});
 	let heightIcon = useSpring(heightTransformIcon, {
 		mass: 0.1,
-		stiffness: 150,
-		damping: 12,
+		stiffness: 250,
+		damping: 15,
 	});
 
 	const [hovered, setHovered] = useState(false);
 
+	let xOffset = useTransform(distance, [100, 50, 0], ["0%", "3%", "6%"]);
+
+	const containerContent = (
+		<motion.div
+			ref={ref}
+			style={{
+				width,
+				height,
+				originX: 0,
+				x: xOffset,
+			}}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}
+			className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative group hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
+			{hovered && (
+				<div className="absolute left-full ml-2 px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 w-fit text-xs">
+					{title}
+				</div>
+			)}
+			<motion.div
+				style={{
+					width: widthIcon,
+					height: heightIcon,
+					originX: 0,
+				}}
+				className="flex items-center justify-center">
+				{icon}
+			</motion.div>
+		</motion.div>
+	);
+
 	return (
 		<div onClick={onClick} style={{ cursor: "pointer" }}>
-			{href ? (
-				<a href={href}>
-					<motion.div
-						ref={ref}
-						style={{ width, height }}
-						onMouseEnter={() => setHovered(true)}
-						onMouseLeave={() => setHovered(false)}
-						className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative group hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
-						{hovered && (
-							<div className="absolute left-full ml-2 px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 w-fit text-xs">
-								{title}
-							</div>
-						)}
-						<motion.div
-							style={{ width: widthIcon, height: heightIcon }}
-							className="flex items-center justify-center">
-							{icon}
-						</motion.div>
-					</motion.div>
-				</a>
-			) : (
-				<motion.div
-					ref={ref}
-					style={{ width, height }}
-					onMouseEnter={() => setHovered(true)}
-					onMouseLeave={() => setHovered(false)}
-					className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative group hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
-					{hovered && (
-						<div className="absolute left-full ml-2 px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 w-fit text-xs">
-							{title}
-						</div>
-					)}
-					<motion.div
-						style={{ width: widthIcon, height: heightIcon }}
-						className="flex items-center justify-center">
-						{icon}
-					</motion.div>
-				</motion.div>
-			)}
+			{href ? <a href={href}>{containerContent}</a> : containerContent}
 		</div>
 	);
 }

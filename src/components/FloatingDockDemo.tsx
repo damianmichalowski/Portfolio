@@ -71,7 +71,7 @@ export function FloatingDockDemo() {
 
 	return (
 		<div
-			className={`fixed left-0 top-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 ${
+			className={`fixed left-2 top-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 ${
 				!isVisible ? "opacity-0" : "opacity-100"
 			}`}>
 			<FloatingDock
