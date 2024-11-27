@@ -8,10 +8,12 @@ import Contact from "./components/Contact";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingDockDemo } from "./components/FloatingDockDemo";
 import { Toaster } from "./components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
 	return (
 		<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+			<Analytics />
 			<div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-neutral-200 selection:text-purple-900 scroll-smooth">
 				<div className="fixed top-0 -z-10 h-full w-full">
 					<div className="relative h-full w-full bg-slate-950 dark:block hidden">

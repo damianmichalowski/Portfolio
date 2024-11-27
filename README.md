@@ -19,8 +19,8 @@ Currently, two official plugins are available:
 - add favicon
 - summary text etc years of coding projects technologies new ideas
 - wyróznic w opise technolgoie w hero
-
 #done
+- add analitics
 - contact form
 - add cofetti on send message
 - light/dark theme

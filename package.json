@@ -21,6 +21,7 @@
     "@shadcn/ui": "^0.0.4",
     "@tabler/icons-react": "^3.22.0",
     "@types/canvas-confetti": "^1.6.4",
+    "@vercel/analytics": "^1.4.1",
     "aceternity-ui": "^0.2.2",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.0",
