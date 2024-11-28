@@ -48,6 +48,12 @@ const FloatingDockMobile = ({
 	className?: string;
 }) => {
 	const [open, setOpen] = useState(false);
+
+	const handleItemClick = (onClick?: () => void) => {
+		setOpen(false);
+		onClick?.();
+	};
+
 	return (
 		<div className={cn("relative block md:hidden", className)}>
 			<AnimatePresence>
@@ -74,6 +80,7 @@ const FloatingDockMobile = ({
 								<a
 									href={item.href}
 									key={item.title}
+									onClick={() => handleItemClick(item.onClick)}
 									className="h-10 w-10 rounded-full bg-gray-200 dark:bg-neutral-800 hover:bg-gray-300 dark:hover:bg-neutral-700 flex items-center justify-center shadow-lg">
 									<div className="h-4 w-4">{item.icon}</div>
 								</a>
