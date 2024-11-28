@@ -83,7 +83,7 @@ export const GalleryModal = ({
 								transition={{ duration: 0.3 }}
 								src={selectedImage}
 								alt="Selected"
-								className="w-full h-[500px] object-contain rounded-lg"
+								className="w-full sm:h-[500px] h-[300px] object-contain rounded-lg"
 								onClick={(e) => e.stopPropagation()}
 							/>
 						</div>
