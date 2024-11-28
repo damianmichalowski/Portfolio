@@ -18,33 +18,32 @@ export const GalleryModal = ({
 	onImageSelect,
 }: GalleryModalProps) => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
-	const [showLeftScroll, setShowLeftScroll] = useState(false);
-	const [showRightScroll, setShowRightScroll] = useState(false);
-
-	const checkScrollButtons = () => {
-		if (scrollContainerRef.current) {
-			const { scrollLeft, scrollWidth, clientWidth } =
-				scrollContainerRef.current;
-			setShowLeftScroll(scrollLeft > 0);
-			setShowRightScroll(scrollLeft < scrollWidth - clientWidth - 10);
-		}
-	};
-
-	// Initial check for scroll buttons
-	useEffect(() => {
-		checkScrollButtons();
-		// Add resize listener to recheck when window size changes
-		window.addEventListener("resize", checkScrollButtons);
-		return () => window.removeEventListener("resize", checkScrollButtons);
-	}, [images]);
 
 	const scroll = (direction: "left" | "right") => {
 		if (scrollContainerRef.current) {
-			const scrollAmount = 200;
-			scrollContainerRef.current.scrollBy({
-				left: direction === "left" ? -scrollAmount : scrollAmount,
-				behavior: "smooth",
-			});
+			// Find current image index
+			const currentIndex = images.indexOf(selectedImage);
+			let nextIndex;
+
+			if (direction === "left") {
+				nextIndex = currentIndex <= 0 ? images.length - 1 : currentIndex - 1;
+			} else {
+				nextIndex = currentIndex >= images.length - 1 ? 0 : currentIndex + 1;
+			}
+
+			// Get the thumbnail element and scroll it into view
+			const thumbnailElements = scrollContainerRef.current.children;
+			const nextThumbnail = thumbnailElements[nextIndex] as HTMLElement;
+			
+			if (nextThumbnail) {
+				nextThumbnail.scrollIntoView({
+					behavior: "smooth",
+					block: "nearest",
+					inline: "center"
+				});
+			}
+
+			onImageSelect(images[nextIndex]);
 		}
 	};
 
@@ -55,6 +54,7 @@ export const GalleryModal = ({
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
+				
 				exit={{ opacity: 0 }}
 				className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
 				onClick={onClose}>
@@ -91,12 +91,13 @@ export const GalleryModal = ({
 						{/* Thumbnail Row Container */}
 						<div className="relative">
 							{/* Left Scroll Button */}
-							{showLeftScroll && images.length > 1 && (
+							{images.length > 1 && (
 								<motion.button
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									exit={{ opacity: 0 }}
 									onClick={() => scroll("left")}
+									
 									className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 dark:bg-neutral-800/80 rounded-full p-2 shadow-lg backdrop-blur-sm">
 									<ChevronLeft className="h-6 w-6 text-neutral-700 dark:text-neutral-200" />
 								</motion.button>
@@ -105,7 +106,6 @@ export const GalleryModal = ({
 							{/* Thumbnails Container with staggered animation */}
 							<div
 								ref={scrollContainerRef}
-								onScroll={checkScrollButtons}
 								className="flex gap-4 overflow-x-auto scrollbar-hide px-12 py-2 scroll-smooth bg-white dark:bg-neutral-900">
 								{images.length > 1 ? (
 									images.map((image, index) => (
@@ -143,7 +143,7 @@ export const GalleryModal = ({
 							</div>
 
 							{/* Right Scroll Button */}
-							{showRightScroll && images.length > 1 && (
+							{images.length > 1 && (
 								<motion.button
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
