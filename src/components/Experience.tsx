@@ -6,7 +6,9 @@ const Experience = () => {
 		<div
 			id="experience"
 			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900 pb-4">
-			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">Experience</h2>
+			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
+				Experience
+			</h2>
 			<div>
 				{EXPERIENCES.map((experience, index) => (
 					<div key={index} className="mb-8 flex flex-wrap lg:justify-center">
@@ -15,7 +17,9 @@ const Experience = () => {
 							initial={{ opacity: 0, x: -100 }}
 							transition={{ duration: 1 }}
 							className="w-full lg:w-1/4">
-							<p className="mb-2 text-sm text-gray-500 dark:text-neutral-400">{experience.year}</p>
+							<p className="mb-2 text-sm text-gray-500 dark:text-neutral-400">
+								{experience.year}
+							</p>
 						</motion.div>
 						<motion.div
 							whileInView={{ opacity: 1, x: 0 }}
@@ -31,13 +35,15 @@ const Experience = () => {
 							<p className="mb-4 text-gray-600 dark:text-neutral-400 text-justify">
 								{experience.description}
 							</p>
-							{experience.technologies.map((tech, index) => (
-								<span
-									key={index}
-									className="mr-2 mt-4 rounded bg-neutral-200 dark:bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">
-									{tech}
-								</span>
-							))}
+							<div className="flex flex-wrap gap-2">
+								{experience.technologies.map((tech, index) => (
+									<span
+										key={index}
+										className="rounded bg-neutral-200 dark:bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">
+										{tech}
+									</span>
+								))}
+							</div>
 						</motion.div>
 					</div>
 				))}

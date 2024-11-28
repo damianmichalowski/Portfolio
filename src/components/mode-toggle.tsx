@@ -10,7 +10,7 @@ export function ModeToggle() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <div className="flex items-center gap-4 mr-8">
+    <div className="flex items-center gap-4 mr-4 sm:mr-8">
       <Switch
         checked={theme === "dark"}
         onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}

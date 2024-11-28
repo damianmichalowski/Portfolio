@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const iconVariant = (duration: number): Variants => ({
-	initial: { x: -10 },
+	initial: { x: 0 },
 	animate: {
 		y: [10, -10],
 		transition: {
@@ -50,7 +50,8 @@ const TooltipWithMotion = ({
 		<motion.div
 			variants={iconVariant(duration)}
 			initial="initial"
-			animate="animate">
+			animate="animate"
+			className="absolute">
 			<TooltipContent>
 				<p>{text}</p>
 			</TooltipContent>
@@ -66,45 +67,47 @@ const Technologies = () => {
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				Technologies
 			</h2>
-			<TooltipProvider delayDuration={100}>
-				<motion.div
-					whileInView={{ opacity: 1, y: 0 }}
-					initial={{ opacity: 0, y: 60 }}
-					transition={{ duration: 1.5 }}
-					className="flex flex-wrap items-center justify-center gap-4">
-					<TooltipWithMotion text="Tailwindcss" duration={2.6}>
-						<RiTailwindCssFill className="text-7xl text-sky-500" />
-					</TooltipWithMotion>
+			<div className="relative">
+				<TooltipProvider delayDuration={100}>
+					<motion.div
+						whileInView={{ opacity: 1, y: 0 }}
+						initial={{ opacity: 0, y: 60 }}
+						transition={{ duration: 1.5 }}
+						className="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-4 mx-auto">
+						<TooltipWithMotion text="Tailwindcss" duration={2.6}>
+							<RiTailwindCssFill className="text-7xl text-sky-500" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Javascript" duration={2.7}>
-						<FaJs className="text-7xl text-yellow-300" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Javascript" duration={2.7}>
+							<FaJs className="text-7xl text-yellow-300" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Typescript" duration={2.8}>
-						<SiTypescript className="text-7xl text-blue-400" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Typescript" duration={2.8}>
+							<SiTypescript className="text-7xl text-blue-400" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Sass" duration={2.9}>
-						<FaSass className="text-7xl text-pink-500" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Sass" duration={2.9}>
+							<FaSass className="text-7xl text-pink-500" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Css" duration={3.0}>
-						<FaCss3 className="text-7xl text-blue-500" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Css" duration={3.0}>
+							<FaCss3 className="text-7xl text-blue-500" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Html" duration={3.1}>
-						<FaHtml5 className="text-7xl text-orange-600" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Html" duration={3.1}>
+							<FaHtml5 className="text-7xl text-orange-600" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Nodejs" duration={3.2}>
-						<FaNodeJs className="text-7xl text-green-500" />
-					</TooltipWithMotion>
+						<TooltipWithMotion text="Nodejs" duration={3.2}>
+							<FaNodeJs className="text-7xl text-green-500" />
+						</TooltipWithMotion>
 
-					<TooltipWithMotion text="Postgresql" duration={3.3}>
-						<BiLogoPostgresql className="text-7xl text-sky-700" />
-					</TooltipWithMotion>
-				</motion.div>
-			</TooltipProvider>
+						<TooltipWithMotion text="Postgresql" duration={3.3}>
+							<BiLogoPostgresql className="text-7xl text-sky-700" />
+						</TooltipWithMotion>
+					</motion.div>
+				</TooltipProvider>
+			</div>
 		</div>
 	);
 };

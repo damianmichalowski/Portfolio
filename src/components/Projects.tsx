@@ -12,7 +12,7 @@ const Projects = () => {
 			</h2>
 			<div>
 				{PROJECTS.map((project, index) => (
-					<div key={index} className="mb-8 flex flex-wrap gap-8 lg:justify-center">
+					<div key={index} className="mb-16 sm:mb-8 flex flex-wrap gap-2 sm:gap-8 lg:justify-center">
 						<motion.div
 							whileInView={{ opacity: 1, x: 0 }}
 							initial={{ opacity: 0, x: -100 }}
@@ -57,13 +57,15 @@ const Projects = () => {
 							<p className="mb-4 text-gray-600 dark:text-neutral-400">
 								{project.description}
 							</p>
-							{project.technologies.map((tech, index) => (
-								<span
-									key={index}
-									className="mr-2 rounded bg-neutral-200 dark:bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">
-									{tech}
-								</span>
-							))}
+							<div className="flex flex-wrap gap-2">
+								{project.technologies.map((tech, index) => (
+									<span
+										key={index}
+										className="rounded bg-neutral-200 dark:bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">
+										{tech}
+									</span>
+								))}
+							</div>
 						</motion.div>
 					</div>
 				))}
