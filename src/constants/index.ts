@@ -36,8 +36,8 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
 	{
-		title: "Movies Browser 🎬",
-		image: "../../assets/projects/movies-browser.png",
+		title: "Movies Browser",
+		image: "../../assets/gallery/movies-browser-1.png",
 		description:
 			"Movies Browser is a simple site that contains all your favorite movies. You can search for a movie or an actor on it.",
 		technologies: [
@@ -49,10 +49,37 @@ export const PROJECTS = [
 		],
 		link: "https://marcin-malek.github.io/movies-browser/#/movies/page=1",
 		github: "https://github.com/damianmichalowski/Movies-Browser",
+		gallery: [
+			"../../assets/gallery/movies-browser-1.png",
+			"../../assets/gallery/movies-browser-2.png",
+			"../../assets/gallery/movies-browser-3.png",
+			"../../assets/gallery/movies-browser-4.png",
+		],
+	},
+	{
+		title: "Portfolio Website",
+		image: "../../assets/gallery/portfolio-1.png",
+		description:
+			"A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include dark/light theme switching, smooth animations using Framer Motion, a floating navigation dock, contact form integration with EmailJS, and interactive UI components. The site showcases my projects, skills, and professional experience with a clean, minimalist design.",
+		technologies: ["React", "Typescript", "Tailwind"],
+		link: "#hero",
+		github: "https://github.com/damianmichalowski/Portfolio",
+		gallery: [
+			"../../assets/gallery/portfolio-1.png",
+			"../../assets/gallery/portfolio-2.png",
+			"../../assets/gallery/portfolio-3.png",
+			"../../assets/gallery/portfolio-4.png",
+			"../../assets/gallery/portfolio-5.png",
+			"../../assets/gallery/portfolio-6.png",
+			"../../assets/gallery/portfolio-7.png",
+			"../../assets/gallery/portfolio-8.png",
+			"../../assets/gallery/portfolio-9.png",
+			"../../assets/gallery/portfolio-10.png",
+		],
 	},
 	{
 		title: "Internal Banking System",
-		image: "../../assets/projects/bzone.png",
+		image: "../../assets/gallery/bzone-1.png",
 		description:
 			"Contributed to Business Zone, a comprehensive procurement platform (P2P) at SKILL AND CHILL. The system features budget planning, supplier management, purchase order processing, document archiving, and HR resources. Implemented with multi-language support and advanced reporting capabilities.",
 		technologies: ["React", "Javascript", "Sass", "SQL", "CSS", "HTML"],
@@ -60,46 +87,56 @@ export const PROJECTS = [
 	},
 	{
 		title: "Forex High-Frequency Trading Application",
-		image: "../../assets/projects/forex.png",
+		image: "../../assets/gallery/forex-1.png",
 		description:
 			"Developed at SoftProdukt, this application assists traders in market analysis and trading automation. Features include customizable trading settings, automated process management, comprehensive data analysis tools, and trading strategy optimization.",
 		technologies: ["JavaScript", "HTMX", "Sass", "CSS", "Django"],
 		link: "../assets/documents/reference_softProdukt.pdf",
 	},
 	{
-		title: "Portfolio Website",
-		image: "../../assets/projects/portfolio.png",
-		description:
-			"A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include dark/light theme switching, smooth animations using Framer Motion, a floating navigation dock, contact form integration with EmailJS, and interactive UI components. The site showcases my projects, skills, and professional experience with a clean, minimalist design.",
-		technologies: ["React", "Typescript", "Tailwind"],
-		link: "#hero",
-		github: "https://github.com/damianmichalowski/Portfolio",
-	},
-	{
 		title: "Anime Vault",
-		image: "../../assets/projects/anime.png",
+		image: "../../assets/gallery/anime-vault-1.png",
 		description:
 			"An anime discovery platform featuring infinite scroll functionality and a search system. Users can explore a vast collection of anime titles, view details, and find new series through an intuitive interface powered by the Shikimori API.",
 		technologies: ["NEXT.JS", "CSS", "Tailwind"],
 		link: "https://anime-vault-black.vercel.app/",
 		github: "https://github.com/damianmichalowski/Anime-Vault",
+		gallery: [
+			"../../assets/gallery/anime-vault-1.png",
+			"../../assets/gallery/anime-vault-2.png",
+			"../../assets/gallery/anime-vault-3.png",
+			"../../assets/gallery/anime-vault-4.png",
+		],
 	},
 	{
 		title: "Rocket Hero",
-		image: "../../assets/projects/rocket-hero.png",
+		image: "../../assets/gallery/rocket-hero-1.png",
 		description:
 			"A space-themed landing page showcasing a fictional rocket company with sleek, modern aesthetics. Built to master Tailwind CSS fundamentals, featuring dynamic theme switching that respects system preferences, full-height responsive sections  - all implemented using Tailwind's utility-first approach.",
 		technologies: ["Tailwind", "HTML"],
 		link: "https://rocket-hero.onrender.com/",
 		github: "https://github.com/damianmichalowski/Rocket-hero",
+		gallery: [
+			"../../assets/gallery/rocket-hero-1.png",
+			"../../assets/gallery/rocket-hero-2.png",
+			"../../assets/gallery/rocket-hero-3.png",
+			"../../assets/gallery/rocket-hero-4.png",
+		],
 	},
 	{
 		title: "To do list",
-		image: "../../assets/projects/todo.png",
-		description: "A clean and intuitive task management application built with React and Tailwind CSS. Features include task creation, completion tracking, and browser-based storage for persistent data across sessions, all wrapped in a modern, responsive interface. 😉",
+		image: "../../assets/gallery/todo-1.png",
+		description:
+			"A clean and intuitive task management application built with React and Tailwind CSS. Features include task creation, completion tracking, and browser-based storage for persistent data across sessions, all wrapped in a modern, responsive interface. 😉",
 		technologies: ["React", "Tailwind"],
 		link: "https://react-todo-list-2wsr.onrender.com/",
 		github: "https://github.com/damianmichalowski/react-todo-list",
+		gallery: [
+			"../../assets/gallery/todo-1.png",
+			"../../assets/gallery/todo-2.png",
+			"../../assets/gallery/todo-3.png",
+			"../../assets/gallery/todo-4.png",
+		],
 	},
 ];
 
