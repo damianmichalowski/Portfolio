@@ -9,10 +9,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingDockWrapper } from "./components/FloatingDockDemo";
 import { Toaster } from "./components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
+import MetaTags from "./components/MetaTags";
 
 const App = () => {
 	return (
 		<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+			<MetaTags />
 			<Analytics />
 			<div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-neutral-200 selection:text-purple-900 scroll-smooth">
 				<div className="fixed top-0 -z-10 h-full w-full">
