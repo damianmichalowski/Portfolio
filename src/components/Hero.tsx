@@ -19,7 +19,19 @@ const Hero = () => {
 		<div
 			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900 pb-4 lg:mb-35">
 			<div className="flex flex-wrap">
-				<div className="w-full lg:w-1/2 mb-16 lg:mb-0">
+				<div className="w-full lg:w-1/2 order-1 lg:order-2 mb-8 lg:mb-0">
+					<div className="flex justify-center">
+						<motion.img
+							initial={{ x: 100, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ duration: 1, delay: 0.8 }}
+							className="rounded-full w-3/4 border border-neutral-200 dark:border-neutral-800"
+							src={IMAGES.hero}
+							alt="Damian Michałowski"
+						/>
+					</div>
+				</div>
+				<div className="w-full lg:w-1/2 order-2 lg:order-1">
 					<div className="flex flex-col items-start lg:items-start ">
 						<motion.h1
 							variants={variants(0)}
@@ -52,18 +64,6 @@ const Hero = () => {
 							animate="visible">
 							<HeroButtons />
 						</motion.div>
-					</div>
-				</div>
-				<div className="w-full lg:w-1/2">
-					<div className="flex justify-center">
-						<motion.img
-							initial={{ x: 100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 1, delay: 0.8 }}
-							className="rounded-full w-3/4 border border-neutral-200 dark:border-neutral-800"
-							src={IMAGES.hero}
-							alt="Damian Michałowski"
-						/>
 					</div>
 				</div>
 			</div>
