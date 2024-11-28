@@ -8,6 +8,8 @@ import { FaJs } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { SiGnubash } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 import { motion, Variants } from "framer-motion";
 import {
 	Tooltip,
@@ -44,7 +46,7 @@ const TooltipWithMotion = ({
 				variants={iconVariant(duration)}
 				initial="initial"
 				animate="animate"
-				className="rounded-2xl border-4 border-neutral-200 dark:border-neutral-800 bg-white dark:bg-transparent p-4">
+				className="rounded-2xl border-4 border-neutral-200 dark:border-neutral-800 bg-white dark:bg-transparent p-4 mb-0 sm:mb-4">
 				{children}
 			</motion.div>
 		</TooltipTrigger>
@@ -68,6 +70,16 @@ const Technologies = () => {
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				Technologies
 			</h2>
+			<motion.p
+				whileInView={{ opacity: 1, x: 0 }}
+				initial={{ opacity: 0, x: -100 }}
+				transition={{ duration: 0.5 }}
+				className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">
+				I'm a versatile developer with a passion for learning new technologies.
+				My adaptability allows me to quickly grasp new concepts and tools, while
+				my creative approach helps in finding innovative solutions to complex
+				problems.
+			</motion.p>
 			<div className="relative">
 				<TooltipProvider delayDuration={100}>
 					<motion.div
@@ -90,7 +102,7 @@ const Technologies = () => {
 						<TooltipWithMotion text="Tailwindcss" duration={2.6}>
 							<RiTailwindCssFill className="text-7xl text-sky-500" />
 						</TooltipWithMotion>
-						
+
 						<TooltipWithMotion text="Sass" duration={2.9}>
 							<FaSass className="text-7xl text-pink-500" />
 						</TooltipWithMotion>
@@ -109,6 +121,14 @@ const Technologies = () => {
 
 						<TooltipWithMotion text="Postgresql" duration={3.3}>
 							<BiLogoPostgresql className="text-7xl text-sky-700" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="Bash" duration={3.4}>
+							<SiGnubash className="text-7xl text-neutral-800 dark:text-white" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="Github" duration={3.5}>
+							<FaGithub className="text-7xl text-gray-800 dark:text-white" />
 						</TooltipWithMotion>
 					</motion.div>
 				</TooltipProvider>
