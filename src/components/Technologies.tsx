@@ -83,14 +83,14 @@ const Technologies = () => {
 							<SiTypescript className="text-7xl text-blue-400" />
 						</TooltipWithMotion>
 
-						<TooltipWithMotion text="Tailwindcss" duration={2.6}>
-							<RiTailwindCssFill className="text-7xl text-sky-500" />
-						</TooltipWithMotion>
-
 						<TooltipWithMotion text="Javascript" duration={2.7}>
 							<FaJs className="text-7xl text-yellow-300" />
 						</TooltipWithMotion>
 
+						<TooltipWithMotion text="Tailwindcss" duration={2.6}>
+							<RiTailwindCssFill className="text-7xl text-sky-500" />
+						</TooltipWithMotion>
+						
 						<TooltipWithMotion text="Sass" duration={2.9}>
 							<FaSass className="text-7xl text-pink-500" />
 						</TooltipWithMotion>
