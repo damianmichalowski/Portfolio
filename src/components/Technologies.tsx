@@ -2,6 +2,7 @@ import React from "react";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaSass } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa";
@@ -74,16 +75,20 @@ const Technologies = () => {
 						initial={{ opacity: 0, y: 60 }}
 						transition={{ duration: 1.5 }}
 						className="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-4 mx-auto">
+						<TooltipWithMotion text="React" duration={2.6}>
+							<FaReact className="text-7xl text-sky-500" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="Typescript" duration={2.8}>
+							<SiTypescript className="text-7xl text-blue-400" />
+						</TooltipWithMotion>
+
 						<TooltipWithMotion text="Tailwindcss" duration={2.6}>
 							<RiTailwindCssFill className="text-7xl text-sky-500" />
 						</TooltipWithMotion>
 
 						<TooltipWithMotion text="Javascript" duration={2.7}>
 							<FaJs className="text-7xl text-yellow-300" />
-						</TooltipWithMotion>
-
-						<TooltipWithMotion text="Typescript" duration={2.8}>
-							<SiTypescript className="text-7xl text-blue-400" />
 						</TooltipWithMotion>
 
 						<TooltipWithMotion text="Sass" duration={2.9}>
