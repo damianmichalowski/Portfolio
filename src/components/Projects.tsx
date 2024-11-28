@@ -101,7 +101,11 @@ const Projects = () => {
 								{project.technologies.map((tech, index) => (
 									<span
 										key={index}
-										className="rounded bg-neutral-200 dark:bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800">
+										className="rounded-md px-2.5 py-1 text-sm font-medium 
+											text-purple-900 dark:text-purple-100
+											bg-gradient-to-r from-neutral-100 via-pink-50/50 to-purple-50/50 
+											dark:from-neutral-900 dark:via-pink-900/10 dark:to-purple-900/10
+											border border-purple-900/80 dark:border-purple-100/50">
 										{tech}
 									</span>
 								))}
@@ -120,6 +124,7 @@ const Projects = () => {
 							PROJECTS[selectedProject].image,
 						]
 					}
+					
 					selectedImage={selectedImage}
 					onImageSelect={setSelectedImage}
 				/>

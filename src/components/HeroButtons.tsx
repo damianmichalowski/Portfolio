@@ -37,7 +37,7 @@ export default function HeroButtons() {
 					stiffness: 500,
 					damping: 15,
 				}}
-				className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-sm font-medium rounded-full bg-transparent border-2 border-gray-300 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:border-pink-400 hover:text-pink-400 dark:hover:border-pink-200 dark:hover:text-pink-200 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900">
+				className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-sm font-medium rounded-full bg-transparent border-2 border-gray-300 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:border-pink-400 hover:text-pink-400 dark:hover:border-pink-200 dark:hover:text-pink-200 transition-colors">
 				<Mail className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
 				Contact Me
 			</motion.button>
