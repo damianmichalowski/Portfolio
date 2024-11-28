@@ -24,6 +24,7 @@ export const EXPERIENCES = [
 		company: "SoftProdukt",
 		description: `Designed an intuitive UX layout for the application. Developed reusable components and enhanced functionality with scripts. Integrated Django, HTMX, JavaScript, and Sass seamlessly.`,
 		technologies: ["HTMX", "Sass", "CSS", "JavaScript", "HTML", "Django"],
+		reference: "../assets/documents/reference_softProdukt.pdf",
 	},
 	{
 		year: "July 2015 - August 2022",
