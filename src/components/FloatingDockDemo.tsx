@@ -9,7 +9,7 @@ import {
 	IconPresentation,
 } from "@tabler/icons-react";
 
-export function FloatingDockDemo() {
+export function FloatingDockWrapper() {
 	const [isVisible, setIsVisible] = useState(true);
 
 	useEffect(() => {
@@ -71,12 +71,12 @@ export function FloatingDockDemo() {
 
 	return (
 		<div
-			className={`fixed left-2 top-1/2 -translate-y-1/2 z-50 transition-opacity duration-300 ${
+			className={`transition-opacity duration-300 z-50 ${
 				!isVisible ? "opacity-0" : "opacity-100"
 			}`}>
 			<FloatingDock
-				desktopClassName="translate-x-0"
-				mobileClassName="fixed bottom-8 right-8"
+				desktopClassName="fixed left-2 top-1/2 -translate-y-1/2 z-50"
+				mobileClassName="fixed bottom-8 right-8 z-50"
 				items={links}
 			/>
 		</div>
