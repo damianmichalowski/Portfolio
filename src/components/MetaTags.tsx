@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 interface MetaTagsProps {
 	title?: string;
@@ -9,49 +9,38 @@ interface MetaTagsProps {
 
 const MetaTags = ({
 	title = "Damian Michałowski - Frontend Developer",
-	description = "Frontend Developer specializing in React, Tailwind CSS, and JavaScript. Building modern, user-friendly web applications with pixel-perfect design. Portfolio of projects and technologies I've worked with - Damian Michałowski's portfolio.",
-	image = "https://portfoliodamianmichalowski.vercel.app/assets/projects/portfolio.png",
+	description = "Frontend Developer specializing in React, Tailwind CSS, and JavaScript. Building modern, user-friendly web applications with pixel-perfect design. Explore Damian Michałowski's portfolio.",
+	image = "/portfolioMeta.png",
 	url = "https://portfoliodamianmichalowski.vercel.app",
 }: MetaTagsProps) => {
 	return (
 		<Helmet>
-			{/* Basic meta tags */}
+			{/* Basic Meta Tags */}
 			<title>{title}</title>
 			<meta name="description" content={description} />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta name="author" content="Damian Michałowski" />
-			<meta httpEquiv="content-language" content="en" />
-			<meta name="robots" content="index, follow" />
-			<meta
-				name="keywords"
-				content="frontend developer, react, typescript, javascript, tailwind css, web development, portfolio, damian michałowski, poland"
-			/>
-			<meta name="geo.region" content="PL" />
-			<meta name="geo.placename" content="Poland" />
+			<meta name="keywords" content="frontend developer, react, javascript, tailwind css, web development, portfolio" />
 
-			{/* Open Graph meta tags for social sharing */}
+			{/* Open Graph Meta Tags */}
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={image} />
-			<meta property="og:image:secure_url" content={image} />
-			<meta property="og:image:width" content="1200" />
-			<meta property="og:image:height" content="627" />
-			<meta property="og:image:type" content="image/png" />
-			<meta property="og:image:alt" content={`${title} - Portfolio Preview`} />
 			<meta property="og:url" content={url} />
 			<meta property="og:type" content="website" />
-			<meta property="og:locale" content="en_PL" />
 			<meta property="og:site_name" content="Damian Michałowski Portfolio" />
+			<meta property="og:locale" content="en_US" />
 
-			{/* Twitter Card meta tags */}
+			{/* Twitter Card Meta Tags */}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={image} />
+			<meta name="twitter:creator" content="@DamianMichałowski" />
 
-			{/* Additional meta tags */}
-			<meta name="theme-color" content="#000000" />
+			{/* Additional Meta Tags */}
 			<link rel="canonical" href={url} />
+			<meta name="theme-color" content="hsl(var(--background))" />
 		</Helmet>
 	);
 };
