@@ -1,3 +1,4 @@
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 
@@ -62,18 +63,7 @@ const Experience = () => {
 									<span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#393BB2_0%,#E2CBFF_50%,#393BB2_100%)]" />
 									<span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white dark:bg-slate-950 px-3 py-1 text-xs font-medium text-gray-900 dark:text-white backdrop-blur-3xl">
 										<span className="relative flex items-center z-10">
-											<svg
-												className="w-4 h-4 mr-1"
-												fill="none"
-												stroke="currentColor"
-												viewBox="0 0 24 24">
-												<path
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth={2}
-													d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-												/>
-											</svg>
+											<FaExternalLinkAlt className="w-3 h-3 mr-2" />
 											Reference
 										</span>
 									</span>
