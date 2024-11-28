@@ -62,7 +62,7 @@ export const GalleryModal = ({
 						initial={{ scale: 0.9, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
 						exit={{ scale: 0.9, opacity: 0 }}
-						className="bg-white dark:bg-neutral-900 rounded-xl p-6 w-full max-w-7xl max-h-[90vh] overflow-y-auto"
+						className="bg-neutral-100 dark:bg-neutral-900 rounded-xl p-6 w-full max-w-7xl max-h-[90vh] overflow-y-auto"
 						onClick={(e) => e.stopPropagation()}>
 						<div className="flex justify-end">
 							<button
@@ -105,7 +105,7 @@ export const GalleryModal = ({
 							{/* Thumbnails Container with staggered animation */}
 							<div
 								ref={scrollContainerRef}
-								className="flex gap-4 overflow-x-auto scrollbar-hide px-12 py-2 scroll-smooth bg-white dark:bg-neutral-900">
+								className="flex gap-4 overflow-x-auto scrollbar-hide px-12 py-2 scroll-smooth bg-neutral-100 dark:bg-neutral-900">
 								{images.length > 1 ? (
 									images.map((image, index) => (
 										<motion.div

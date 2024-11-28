@@ -38,7 +38,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
 	{
 		title: "Movies Browser",
-		image: "../../assets/gallery/movies-browser-1.png",
+		image: "../../assets/gallery/movies-browser-movies.png",
 		description:
 			"Movies Browser is a simple site that contains all your favorite movies. You can search for a movie or an actor on it.",
 		technologies: [
@@ -51,31 +51,34 @@ export const PROJECTS = [
 		link: "https://marcin-malek.github.io/movies-browser/#/movies/page=1",
 		github: "https://github.com/damianmichalowski/Movies-Browser",
 		gallery: [
-			"../../assets/gallery/movies-browser-1.png",
-			"../../assets/gallery/movies-browser-2.png",
-			"../../assets/gallery/movies-browser-3.png",
-			"../../assets/gallery/movies-browser-4.png",
+			"../../assets/gallery/movies-browser-movies.png",
+			"../../assets/gallery/movies-browser-people.png",
+			"../../assets/gallery/movies-browser-movie-card.png",
+			"../../assets/gallery/movies-browser-movie-poster.png",
+			"../../assets/gallery/movies-browser-movie-description.png",
+			"../../assets/gallery/movies-browser-people-card.png",
+			"../../assets/gallery/movies-browser-people-description.png",
 		],
 	},
 	{
 		title: "Portfolio Website",
-		image: "../../assets/gallery/portfolio-1.png",
+		image: "../../assets/gallery/portfolio-hero_dark.png",
 		description:
 			"A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include dark/light theme switching, smooth animations using Framer Motion, a floating navigation dock, contact form integration with EmailJS, and interactive UI components. The site showcases my projects, skills, and professional experience with a clean, minimalist design.",
 		technologies: ["React", "Typescript", "Tailwind"],
 		link: "#hero",
 		github: "https://github.com/damianmichalowski/Portfolio",
 		gallery: [
-			"../../assets/gallery/portfolio-1.png",
-			"../../assets/gallery/portfolio-2.png",
-			"../../assets/gallery/portfolio-3.png",
-			"../../assets/gallery/portfolio-4.png",
-			"../../assets/gallery/portfolio-5.png",
-			"../../assets/gallery/portfolio-6.png",
-			"../../assets/gallery/portfolio-7.png",
-			"../../assets/gallery/portfolio-8.png",
-			"../../assets/gallery/portfolio-9.png",
-			"../../assets/gallery/portfolio-10.png",
+			"../../assets/gallery/portfolio-hero_dark.png",
+			"../../assets/gallery/portfolio-hero_light.png",
+			"../../assets/gallery/portfolio-about_dark.png",
+			"../../assets/gallery/portfolio-about_light.png",
+			"../../assets/gallery/portfolio-technologies_dark.png",
+			"../../assets/gallery/portfolio-technologies_light.png",
+			"../../assets/gallery/portfolio-projects_dark.png",
+			"../../assets/gallery/portfolio-projects_light.png",
+			"../../assets/gallery/portfolio-contact_dark.png",
+			"../../assets/gallery/portfolio-contact_light.png",
 		],
 	},
 	{
