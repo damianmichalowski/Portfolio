@@ -127,21 +127,21 @@ export const PROJECTS = [
 			"../../assets/gallery/rocket-hero-4.png",
 		],
 	},
-	{
-		title: "To do list",
-		image: "../../assets/gallery/todo-1.png",
-		description:
-			"A clean and intuitive task management application built with React and Tailwind CSS. Features include task creation, completion tracking, and browser-based storage for persistent data across sessions, all wrapped in a modern, responsive interface. 😉",
-		technologies: ["React", "Tailwind"],
-		link: "https://react-todo-list-2wsr.onrender.com/",
-		github: "https://github.com/damianmichalowski/react-todo-list",
-		gallery: [
-			"../../assets/gallery/todo-1.png",
-			"../../assets/gallery/todo-2.png",
-			"../../assets/gallery/todo-3.png",
-			"../../assets/gallery/todo-4.png",
-		],
-	},
+	// {
+	// 	title: "To do list",
+	// 	image: "../../assets/gallery/todo-1.png",
+	// 	description:
+	// 		"A clean and intuitive task management application built with React and Tailwind CSS. Features include task creation, completion tracking, and browser-based storage for persistent data across sessions, all wrapped in a modern, responsive interface. 😉",
+	// 	technologies: ["React", "Tailwind"],
+	// 	link: "https://react-todo-list-2wsr.onrender.com/",
+	// 	github: "https://github.com/damianmichalowski/react-todo-list",
+	// 	gallery: [
+	// 		"../../assets/gallery/todo-1.png",
+	// 		"../../assets/gallery/todo-2.png",
+	// 		"../../assets/gallery/todo-3.png",
+	// 		"../../assets/gallery/todo-4.png",
+	// 	],
+	// },
 ];
 
 export const SOCIAL_MEDIA = {
