@@ -1,4 +1,4 @@
-import { FaGithub, FaLink } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -6,11 +6,21 @@ import { GalleryModal } from "./GalleryModal";
 import { ExternalLink, ImageIcon } from "lucide-react";
 import Section from "./layout/Section";
 
-const Projects = () => {
+interface Project {
+	title: string;
+	description: string;
+	image: string;
+	link: string;
+	github?: string;
+	gallery?: string[];
+	technologies: string[];
+}
+
+const Projects: React.FC = () => {
 	const [selectedProject, setSelectedProject] = useState<number | null>(null);
 	const [selectedImage, setSelectedImage] = useState<string>("");
 
-	const handleImageClick = (projectIndex: number, image: string) => {
+	const handleImageClick = (projectIndex: number, image: string): void => {
 		setSelectedProject(projectIndex);
 		setSelectedImage(image);
 	};

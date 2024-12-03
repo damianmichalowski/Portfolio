@@ -32,14 +32,16 @@ const iconVariant = (duration: number): Variants => ({
 	},
 });
 
-const TooltipWithMotion = ({
-	children,
-	text,
-	duration,
-}: {
+interface TooltipWithMotionProps {
 	children: React.ReactNode;
 	text: string;
 	duration: number;
+}
+
+const TooltipWithMotion: React.FC<TooltipWithMotionProps> = ({
+	children,
+	text,
+	duration,
 }) => (
 	<Tooltip>
 		<TooltipTrigger>
@@ -63,7 +65,7 @@ const TooltipWithMotion = ({
 	</Tooltip>
 );
 
-const Technologies = () => {
+const Technologies: React.FC = () => {
 	return (
 		<Section id="technologies" className="pb-40">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">

@@ -1,9 +1,9 @@
-import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 import { IMAGES } from "../constants";
 import Section from "./layout/Section";
+import { fadeInLeft, fadeInRight } from "@/animations/variants";
 
-const About = () => {
+const About: React.FC = () => {
 	return (
 		<Section id="about">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
@@ -11,22 +11,22 @@ const About = () => {
 			</h2>
 			<div className="flex flex-wrap">
 				<motion.div
-					whileInView={{ opacity: 1, x: 0 }}
-					initial={{ opacity: 0, x: -100 }}
-					transition={{ duration: 0.5 }}
+					variants={fadeInLeft}
+					initial="hidden"
+					whileInView="visible"
 					className="w-full lg:w-1/2 lg:p-8">
 					<div className="flex items-center justify-center">
 						<img
-							className="rounded-2xl border border-neutral-200 dark:border-neutral-800 w-full sm:w-3/4"
-							src={IMAGES.about}
-							alt="about"
+							 className="rounded-2xl border border-neutral-200 dark:border-neutral-800 w-full sm:w-3/4"
+							 src={IMAGES.about}
+							 alt="About Damian Michałowski"
 						/>
 					</div>
 				</motion.div>
 				<motion.div
-					whileInView={{ opacity: 1, x: 0 }}
-					initial={{ opacity: 0, x: 100 }}
-					transition={{ duration: 0.5 }}
+					variants={fadeInRight}
+					initial="hidden"
+					whileInView="visible"
 					className="w-full lg:w-1/2">
 					<div className="flex justify-center lg:justify-start">
 						<div className="my-2 max-w-xl py-6 space-y-4 text-justify text-gray-700 dark:text-neutral-300">

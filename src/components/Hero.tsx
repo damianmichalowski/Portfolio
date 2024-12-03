@@ -1,31 +1,36 @@
-import { HERO_CONTENT } from "../constants";
-import { motion } from "framer-motion";
+import { HERO_CONTENT, IMAGES } from "../constants";
+import { motion, Variants } from "framer-motion";
 import HeroButtons from "./HeroButtons";
-import { IMAGES } from "../constants";
-import { Button } from "./ui/button";
-import { useToast } from "@/hooks/use-toast";
 import Section from "./layout/Section";
 
-const variants = (delay: number) => ({
+const variants = (delay: number): Variants => ({
 	hidden: { x: -100, opacity: 0 },
 	visible: {
 		x: 0,
 		opacity: 1,
-		transition: { duration: 0.5, delay: delay },
+		transition: { duration: 0.5, delay },
 	},
 });
 
-const Hero = () => {
-	const { toast } = useToast();
+const imageVariants: Variants = {
+	hidden: { x: 100, opacity: 0 },
+	visible: {
+		x: 0,
+		opacity: 1,
+		transition: { duration: 1, delay: 0 },
+	},
+};
+
+const Hero: React.FC = () => {
 	return (
 		<Section id="hero" className="pb-4 lg:mb-35">
 			<div className="flex flex-wrap">
 				<div className="w-full lg:w-1/2 order-1 lg:order-2 mb-16 lg:mb-0">
 					<div className="flex justify-center">
 						<motion.img
-							initial={{ x: 100, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 1, delay: 0 }}
+							variants={imageVariants}
+							initial="hidden"
+							animate="visible"
 							className="rounded-full w-3/4 border border-neutral-200 dark:border-neutral-800"
 							src={IMAGES.hero}
 							alt="Damian Michałowski"
@@ -33,7 +38,7 @@ const Hero = () => {
 					</div>
 				</div>
 				<div className="w-full lg:w-1/2 order-2 lg:order-1">
-					<div className="flex flex-col items-start lg:items-start ">
+					<div className="flex flex-col items-start lg:items-start">
 						<motion.h1
 							variants={variants(0)}
 							initial="hidden"
@@ -41,10 +46,6 @@ const Hero = () => {
 							className="pb-16 text-6xl font-thin tracking-tight lg-mt-16 lg:text-8xl text-black dark:text-white">
 							Damian Michałowski
 						</motion.h1>
-						{/* testing toast */}
-						{/* <Button onClick={() => toast({ title: "Hello", description: "Hello" })}>
-							Toast
-						</Button> */}
 						<motion.span
 							variants={variants(0.2)}
 							initial="hidden"

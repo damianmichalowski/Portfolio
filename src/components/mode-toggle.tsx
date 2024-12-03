@@ -1,19 +1,24 @@
-import { Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import { Switch } from "@/components/ui/switch";
 import { motion, AnimatePresence } from "framer-motion";
 
-export function ModeToggle() {
+type Theme = "dark" | "light";
+
+export const ModeToggle: React.FC = () => {
   const { setTheme, theme } = useTheme();
+
+  const handleThemeChange = (checked: boolean): void => {
+    const newTheme: Theme = checked ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
   return (
     <div className="flex items-center gap-4 mr-4 sm:mr-8">
       <Switch
         checked={theme === "dark"}
-        onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+        onCheckedChange={handleThemeChange}
       />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -32,4 +37,4 @@ export function ModeToggle() {
       </AnimatePresence>
     </div>
   );
-}
+};

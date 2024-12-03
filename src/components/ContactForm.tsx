@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
+import { useRef, useState } from "react";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "./ui/textarea";
-import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
@@ -18,14 +17,21 @@ interface FormErrors {
 	user_message?: string;
 }
 
-export function ContactForm({
-	onClose,
-	removeBackground = false,
-}: {
+interface ContactFormProps {
 	onClose?: () => void;
 	removeBackground?: boolean;
-}) {
-	const [isLoading, setIsLoading] = useState(false);
+}
+
+interface LabelInputContainerProps {
+	children: React.ReactNode;
+	className?: string;
+}
+
+export const ContactForm: React.FC<ContactFormProps> = ({
+	onClose,
+	removeBackground = false,
+}) => {
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [errors, setErrors] = useState<FormErrors>({});
 	const form = useRef<HTMLFormElement>(null);
 	const { toast } = useToast();
@@ -66,62 +72,68 @@ export function ContactForm({
 		return isFormValid;
 	};
 
-	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleConfetti = (): void => {
+		const button = document.querySelector('button[type="submit"]');
+		if (button) {
+			const rect = button.getBoundingClientRect();
+			const x = rect.left + rect.width / 2;
+			const y = rect.top + rect.height / 2;
+			confetti({
+				origin: {
+					x: x / window.innerWidth,
+					y: y / window.innerHeight,
+				},
+				spread: 70,
+				scalar: 1.2,
+				particleCount: 100,
+				startVelocity: 30,
+			});
+		}
+	};
+
+	const sendEmail = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
 		e.preventDefault();
 		if (!validateForm()) return;
 
 		setIsLoading(true);
 
-		if (form.current) {
-			emailjs
-				.sendForm(
+		try {
+			if (form.current) {
+				await emailjs.sendForm(
 					import.meta.env.VITE_SERVICE_ID!,
 					import.meta.env.VITE_TEMPLATE_ID!,
 					form.current,
 					{
 						publicKey: import.meta.env.VITE_PUBLIC_KEY!,
 					}
-				)
-				.then(
-					() => {
-						console.log("SUCCESS!");
-						const button = document.querySelector('button[type="submit"]');
-						if (button) {
-							const rect = button.getBoundingClientRect();
-							const x = rect.left + rect.width / 2;
-							const y = rect.top + rect.height / 2;
-							confetti({
-								origin: {
-									x: x / window.innerWidth,
-									y: y / window.innerHeight,
-								},
-								spread: 70,
-								scalar: 1.2,
-								particleCount: 100,
-								startVelocity: 30,
-							});
-						}
-						toast({
-							title: "Thank You for Reaching Out!",
-							description:
-								"Your message has been successfully sent. I'll get back to you as soon as possible. Have a great day!",
-						});
-						onClose?.();
-						form.current?.reset();
-						setIsLoading(false);
-					},
-					(error) => {
-						console.log("FAILED...", error.text);
-						toast({
-							title: "Message Delivery Failed",
-							description:
-								"Unfortunately, we couldn't send your message. Please try again later.",
-						});
-						setIsLoading(false);
-					}
 				);
+
+				handleConfetti();
+				toast({
+					title: "Thank You for Reaching Out!",
+					description:
+						"Your message has been successfully sent. I'll get back to you as soon as possible. Have a great day!",
+				});
+				onClose?.();
+				form.current.reset();
+			}
+		} catch (error) {
+			toast({
+				title: "Message Delivery Failed",
+				description:
+					"Unfortunately, we couldn't send your message. Please try again later.",
+			});
+			console.error("FAILED...", error);
+		} finally {
+			setIsLoading(false);
 		}
 	};
+
+	const LabelInputContainer: React.FC<LabelInputContainerProps> = ({ children, className }) => (
+		<div className={cn("flex flex-col space-y-2 w-full", className)}>
+			{children}
+		</div>
+	);
 
 	return (
 		<div
@@ -226,7 +238,7 @@ export function ContactForm({
 			</form>
 		</div>
 	);
-}
+};
 
 const BottomGradient = () => {
 	return (
@@ -234,19 +246,5 @@ const BottomGradient = () => {
 			<span className="group-hover/btn:opacity-100 block transition duration-500 opacity-0 absolute h-px w-full -bottom-px inset-x-0 bg-gradient-to-r from-transparent via-pink-500 to-transparent" />
 			<span className="group-hover/btn:opacity-100 blur-sm block transition duration-500 opacity-0 absolute h-px w-1/2 mx-auto -bottom-px inset-x-10 bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
 		</>
-	);
-};
-
-const LabelInputContainer = ({
-	children,
-	className,
-}: {
-	children: React.ReactNode;
-	className?: string;
-}) => {
-	return (
-		<div className={cn("flex flex-col space-y-2 w-full", className)}>
-			{children}
-		</div>
 	);
 };
