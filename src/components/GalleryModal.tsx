@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
+import BlurImage from "./ui/BlurImage";
 
 interface GalleryModalProps {
 	isOpen: boolean;
@@ -97,17 +98,11 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
 						</div>
 
 						<div className="mb-6">
-							<motion.img
+							<BlurImage
 								key={selectedImage}
-								variants={imageVariants}
-								initial="initial"
-								animate="animate"
-								exit="exit"
-								transition={{ duration: 0.3 }}
 								src={selectedImage}
 								alt="Selected"
 								className="w-full sm:h-[500px] h-[300px] object-contain rounded-lg"
-								onClick={(e) => e.stopPropagation()}
 							/>
 						</div>
 
@@ -159,13 +154,12 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
 												selectedImage === image
 													? "[outline:2px_solid_theme(colors.purple.500)] outline-offset-2"
 													: ""
-											}`}
-											onClick={() => onImageSelect(image)}>
-											<img
+											}`}>
+											<BlurImage
 												src={image}
 												alt={`Thumbnail ${index + 1}`}
 												className="w-48 h-32 object-cover"
-												style={{ aspectRatio: "3/2" }}
+												onClick={() => onImageSelect(image)}
 											/>
 										</motion.div>
 									))
