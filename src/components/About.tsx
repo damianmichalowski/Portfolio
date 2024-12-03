@@ -31,13 +31,13 @@ const About: React.FC = () => {
 					<div className="flex justify-center lg:justify-start">
 						<div className="my-2 max-w-xl py-6 space-y-4 text-justify text-gray-700 dark:text-neutral-300">
 							<p>
-								I am a dedicated frontend developer with experience in crafting visually appealing and user-friendly web applications. I have contributed to impactful projects such as a Forex High-Frequency Trading Application and an Internal Banking System, where I designed intuitive UX layouts, developed reusable components, and implemented real-time features.
+								I am a dedicated frontend developer specializing in user-friendly web applications. My experience includes working on impactful projects like a Forex Trading Application and Banking System, where I focused on intuitive UX design and real-time features.
 							</p>
 							<p>
-								As an attentive and detail-oriented individual, I possess an unwavering commitment to perfection. With a keen eye for visual precision down to the pixel, I have harbored a lifelong passion for all things IT. My academic pursuits stand as proof of my desire to approach programming professionally, showcasing my ongoing commitment to learning.
+								Detail-oriented and committed to excellence, I bring pixel-perfect precision to my work. My passion for IT and continuous learning is reflected in my academic background and professional approach to programming.
 							</p>
 							<p>
-								Responsibility is ingrained in my work ethic, reflected in my diverse background in front-end development. While my journey began with graphic design and video production, my enduring fascination with programming has been constant. I am driven by a thirst for new knowledge, perpetually seeking opportunities to expand my skill set and deliver measurable business value.
+								With roots in graphic design and video production, I've found my true calling in frontend development. I'm constantly expanding my skills and knowledge to deliver valuable solutions that make a real impact.
 							</p>
 						</div>
 					</div>
