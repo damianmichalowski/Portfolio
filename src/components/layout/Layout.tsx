@@ -15,7 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
 			<div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-neutral-200 selection:text-purple-900 scroll-smooth">
 				<Background />
 				<FloatingNav />
-				<div className="container mx-auto px-8">{children}</div>
+				<div className="container mx-auto px-8 sm:px-20">{children}</div>
 			</div>
 			<Toaster />
 		</ThemeProvider>

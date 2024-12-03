@@ -70,7 +70,7 @@ export const FloatingNav: React.FC = () => {
 			}`}>
 			<FloatingDock
 				desktopClassName="fixed left-2 top-1/2 -translate-y-1/2 z-50"
-				mobileClassName="fixed bottom-16 right-8 z-50"
+				mobileClassName="fixed bottom-8 right-8 z-50"
 				items={navLinks}
 			/>
 		</div>
