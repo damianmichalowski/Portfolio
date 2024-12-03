@@ -17,6 +17,7 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Section from "./layout/Section";
 
 const iconVariant = (duration: number): Variants => ({
 	initial: { x: 0 },
@@ -64,9 +65,7 @@ const TooltipWithMotion = ({
 
 const Technologies = () => {
 	return (
-		<div
-			id="technologies"
-			className="border-b border-neutral-300 dark:border-neutral-800 pb-40">
+		<Section id="technologies" className="pb-40">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				Technologies
 			</h2>
@@ -133,7 +132,7 @@ const Technologies = () => {
 					</motion.div>
 				</TooltipProvider>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

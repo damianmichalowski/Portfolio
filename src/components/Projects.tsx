@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { GalleryModal } from "./GalleryModal";
 import { ExternalLink, ImageIcon } from "lucide-react";
+import Section from "./layout/Section";
 
 const Projects = () => {
 	const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -15,9 +16,7 @@ const Projects = () => {
 	};
 
 	return (
-		<div
-			id="projects"
-			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900 pb-4">
+		<Section id="projects">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				Projects
 			</h2>
@@ -124,12 +123,11 @@ const Projects = () => {
 							PROJECTS[selectedProject].image,
 						]
 					}
-					
 					selectedImage={selectedImage}
 					onImageSelect={setSelectedImage}
 				/>
 			)}
-		</div>
+		</Section>
 	);
 };
 

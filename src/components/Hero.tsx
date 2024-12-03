@@ -4,6 +4,8 @@ import HeroButtons from "./HeroButtons";
 import { IMAGES } from "../constants";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
+import Section from "./layout/Section";
+
 const variants = (delay: number) => ({
 	hidden: { x: -100, opacity: 0 },
 	visible: {
@@ -16,7 +18,7 @@ const variants = (delay: number) => ({
 const Hero = () => {
 	const { toast } = useToast();
 	return (
-		<div className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900 pb-4 lg:mb-35">
+		<Section id="hero" className="pb-4 lg:mb-35">
 			<div className="flex flex-wrap">
 				<div className="w-full lg:w-1/2 order-1 lg:order-2 mb-16 lg:mb-0">
 					<div className="flex justify-center">
@@ -66,7 +68,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Section>
 	);
 };
 

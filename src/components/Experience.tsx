@@ -1,12 +1,11 @@
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
+import Section from "./layout/Section";
 
 const Experience = () => {
 	return (
-		<div
-			id="experience"
-			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900 pb-4">
+		<Section id="experience" className="pb-4">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				Experience
 			</h2>
@@ -73,7 +72,7 @@ const Experience = () => {
 					</div>
 				))}
 			</div>
-		</div>
+		</Section>
 	);
 };
 

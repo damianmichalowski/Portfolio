@@ -1,11 +1,11 @@
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
 import { IMAGES } from "../constants";
+import Section from "./layout/Section";
+
 const About = () => {
 	return (
-		<div
-			id="about"
-			className="widescreen:section-min-height tallscreen:section-min-height border-b border-neutral-300 dark:border-neutral-900">
+		<Section id="about">
 			<h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
 				About Me
 			</h2>
@@ -43,7 +43,7 @@ const About = () => {
 					</div>
 				</motion.div>
 			</div>
-		</div>
+		</Section>
 	);
 };
 
