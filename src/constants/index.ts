@@ -9,18 +9,25 @@ Responsibility is ingrained in my work ethic, reflected in my diverse background
 
 export const EXPERIENCES = [
 	{
-		year: "August 2022 - Present",
-		role: "Frontend Engineer",
+		year: "February 2025 - Present",
+		role: "Front-End Developer React",
+		company: "Accenture",
+		description: `Developing user-friendly web applications using modern technologies like React, JavaScript, TypeScript. My responsibilities include building responsive UI components, optimizing performance, and collaborating with backend developers, UX designers, and business analysts to deliver high-quality digital solutions. I follow best coding practices, ensure accessibility, and contribute to improving development processes. My work allows me to participate in large-scale projects, leverage cloud platforms, and stay up-to-date with the latest industry trends.`,
+		technologies: ["React", "TypeScript", "JavaScript", "Tailwind"],
+	},
+	{
+		year: "August 2022 - February 2025",
+		role: "Front-End Developer",
 		company: "SKILL AND CHILL",
 		description: `Delivered high-quality visual aesthetics for the system.
     Fixed interface errors and glitches.
     Developed new components, screens, and integrated database queries.
     Implemented real-time group chat interface with chatbot integration.`,
-		technologies: ["React.js", "Javascript", "Sass", "CSS", "HTML"],
+		technologies: ["React", "JavaScript", "Sass", "CSS", "HTML"],
 	},
 	{
 		year: "July 2023 - November 2023",
-		role: "Frontend Developer",
+		role: "Front-End Developer",
 		company: "SoftProdukt",
 		description: `Designed an intuitive UX layout for the application. Developed reusable components and enhanced functionality with scripts. Integrated Django, HTMX, JavaScript, and Sass seamlessly.`,
 		technologies: ["HTMX", "Sass", "CSS", "JavaScript", "HTML", "Django"],
@@ -36,6 +43,24 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+	{
+		title: "My Isaack 2D game",
+		image: "../../assets/gallery/Isaac-1.png",
+		description:
+			"A 2D roguelike game developed in C++ using SFML, inspired by The Binding of Isaac: Rebirth. The project features randomly generated dungeon rooms, a player character navigating through them, and enemy encounters. The game includes collision detection, an FPS counter, and simple combat mechanics with projectile-based attacks. Enemies have basic AI behaviors, and defeating them unlocks room exits. The system supports obstacles, and different enemy types. The goal was to implement core gameplay mechanics while learning SFML and game development principles.",
+		technologies: [
+			"C++",
+			"SFML"
+		],
+		link: "https://drive.google.com/file/d/1RDGJ5yKm-4HYr48DQD2tIQn4CN_9d7w2/view?usp=drive_link",
+		github: "https://github.com/damianmichalowski/Game2D",
+		gallery: [
+			"../../assets/gallery/Isaac-1.png",
+			"../../assets/gallery/Isaac-2.png",
+			"../../assets/gallery/Isaac-3.png",
+			"../../assets/gallery/Isaac-4.png",
+		],
+	},
 	{
 		title: "Movies Browser",
 		image: "../../assets/gallery/movies-browser-movies.png",
@@ -86,7 +111,7 @@ export const PROJECTS = [
 		image: "../../assets/gallery/bzone-1.png",
 		description:
 			"Contributed to Business Zone, a comprehensive procurement platform (P2P) at SKILL AND CHILL. The system features budget planning, supplier management, purchase order processing, document archiving, and HR resources. Implemented with multi-language support and advanced reporting capabilities.",
-		technologies: ["React", "Javascript", "Sass", "SQL", "CSS", "HTML"],
+		technologies: ["React", "JavaScript", "Sass", "SQL", "CSS", "HTML"],
 		link: "https://business-zone.eu/pl/",
 	},
 	{

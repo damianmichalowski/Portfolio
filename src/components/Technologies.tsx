@@ -10,6 +10,7 @@ import { SiTypescript } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { SiGnubash } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
+import { SiCplusplus } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
 import {
 	Tooltip,
@@ -130,6 +131,10 @@ const Technologies: React.FC = () => {
 
 						<TooltipWithMotion text="Github" duration={3.5}>
 							<FaGithub className="text-7xl text-gray-800 dark:text-white" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="C++" duration={3.5}>
+							<SiCplusplus className="text-7xl text-blue-600 dark:text-blue-400" />
 						</TooltipWithMotion>
 					</motion.div>
 				</TooltipProvider>
