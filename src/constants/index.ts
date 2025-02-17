@@ -44,7 +44,7 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
 	{
-		title: "My Isaack 2D game",
+		title: "Game2D",
 		image: "../../assets/gallery/Isaac-1.png",
 		description:
 			"A 2D roguelike game developed in C++ using SFML, inspired by The Binding of Isaac: Rebirth. The project features randomly generated dungeon rooms, a player character navigating through them, and enemy encounters. The game includes collision detection, an FPS counter, and simple combat mechanics with projectile-based attacks. Enemies have basic AI behaviors, and defeating them unlocks room exits. The system supports obstacles, and different enemy types. The goal was to implement core gameplay mechanics while learning SFML and game development principles.",
