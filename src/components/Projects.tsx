@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
 									</motion.a>
 								)}
 							</div>
-							<p className="mb-4 text-gray-600 dark:text-neutral-400">
+							<p className="mb-4 text-gray-600 dark:text-neutral-400 text-justify">
 								{project.description}
 							</p>
 							<div className="flex flex-wrap gap-2">
