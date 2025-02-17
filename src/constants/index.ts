@@ -52,7 +52,7 @@ export const PROJECTS = [
 			"C++",
 			"SFML"
 		],
-		link: "https://drive.google.com/file/d/1RDGJ5yKm-4HYr48DQD2tIQn4CN_9d7w2/view?usp=drive_link",
+		link: "https://youtu.be/acCnUTM4C5Y",
 		github: "https://github.com/damianmichalowski/Game2D",
 		gallery: [
 			"../../assets/gallery/Isaac-1.png",
