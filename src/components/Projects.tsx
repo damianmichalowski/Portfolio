@@ -22,7 +22,8 @@ const Projects: React.FC = () => {
 
 	const handleImageClick = (projectIndex: number, image: string): void => {
 		setSelectedProject(projectIndex);
-		setSelectedImage(image);
+		const galleryImages = PROJECTS[projectIndex].gallery;
+		setSelectedImage(galleryImages ? galleryImages[0] : image);
 	};
 
 	return (

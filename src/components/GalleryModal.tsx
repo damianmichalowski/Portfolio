@@ -2,6 +2,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import BlurImage from "./ui/BlurImage";
+import { FaPlay } from "react-icons/fa";
 
 interface GalleryModalProps {
 	isOpen: boolean;
@@ -70,6 +71,10 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
 		onImageSelect(images[nextIndex]);
 	};
 
+	const isYouTubeUrl = (url: string): boolean => {
+		return url.includes("youtube.com/embed/");
+	};
+
 	if (!isOpen) return null;
 
 	return (
@@ -98,12 +103,25 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
 						</div>
 
 						<div className="mb-6">
-							<BlurImage
-								key={selectedImage}
-								src={selectedImage}
-								alt="Selected"
-								className="w-full sm:h-[500px] h-[300px] object-contain rounded-lg"
-							/>
+							{isYouTubeUrl(selectedImage) ? (
+								<iframe
+									width="100%"
+									height="500"
+									src={selectedImage}
+									title="YouTube video player"
+									frameBorder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowFullScreen
+									className="rounded-lg"
+								/>
+							) : (
+								<BlurImage
+									key={selectedImage}
+									src={selectedImage}
+									alt="Selected"
+									className="w-full sm:h-[500px] h-[300px] object-contain rounded-lg"
+								/>
+							)}
 						</div>
 
 						<div className="relative">
@@ -150,17 +168,23 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
 												scale: 1.05,
 												transition: { duration: 0.2 },
 											}}
+											onClick={() => onImageSelect(image)}
 											className={`relative flex-shrink-0 cursor-pointer rounded-lg overflow-hidden ${
 												selectedImage === image
 													? "[outline:2px_solid_theme(colors.purple.500)] outline-offset-2"
 													: ""
 											}`}>
-											<BlurImage
-												src={image}
-												alt={`Thumbnail ${index + 1}`}
-												className="w-48 h-32 object-cover"
-												onClick={() => onImageSelect(image)}
-											/>
+											{isYouTubeUrl(image) ? (
+												<div className="w-48 h-32 bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center">
+													<FaPlay className="w-8 h-8 text-neutral-500" />
+												</div>
+											) : (
+												<BlurImage
+													src={image}
+													alt={`Thumbnail ${index + 1}`}
+													className="w-48 h-32 object-cover"
+												/>
+											)}
 										</motion.div>
 									))
 								) : (

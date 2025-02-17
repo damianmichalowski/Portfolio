@@ -55,6 +55,7 @@ export const PROJECTS = [
 		link: "https://youtu.be/acCnUTM4C5Y",
 		github: "https://github.com/damianmichalowski/Game2D",
 		gallery: [
+			"https://www.youtube.com/embed/acCnUTM4C5Y?si=hCSkXSGbNHwzJpVv&amp;start=2",
 			"../../assets/gallery/Isaac-1.png",
 			"../../assets/gallery/Isaac-2.png",
 			"../../assets/gallery/Isaac-3.png",
