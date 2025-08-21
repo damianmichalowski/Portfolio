@@ -14,10 +14,10 @@ const About: React.FC = () => {
 					variants={fadeInLeft}
 					initial="hidden"
 					whileInView="visible"
-					className="w-full lg:w-1/2 lg:p-8">
+					className="w-full lg:w-1/2">
 					<div className="flex items-center justify-center">
 						<img
-							 className="rounded-2xl border border-neutral-200 dark:border-neutral-800 w-full sm:w-3/4"
+							 className="rounded-xl w-full sm:w-3/4"
 							 src={IMAGES.about}
 							 alt="About Damian Michałowski"
 						/>

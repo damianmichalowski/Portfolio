@@ -195,6 +195,6 @@ export const DOCUMENTS = {
 };
 
 export const IMAGES = {
-	about: "../assets/about.png",
-	hero: "../assets/damianMichalowskiProfile.png",
+	about: "../assets/damianDarkKwadrat.jpg",
+	hero: "../assets/damianSmileKwadrat.jpg",
 };

@@ -31,14 +31,14 @@ const Hero: React.FC = () => {
 							variants={imageVariants}
 							initial="hidden"
 							animate="visible"
-							className="rounded-full w-3/4 border border-neutral-200 dark:border-neutral-800"
+							className="rounded-full w-5/6"
 							src={IMAGES.hero}
 							alt="Damian Michałowski"
 						/>
 					</div>
 				</div>
 				<div className="w-full lg:w-1/2 order-2 lg:order-1">
-					<div className="flex flex-col items-start lg:items-start">
+					<div className="flex flex-col items-start lg:items-start pr-16">
 						<motion.h1
 							variants={variants(0)}
 							initial="hidden"
