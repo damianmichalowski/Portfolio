@@ -9,6 +9,8 @@ import { FaNodeJs } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { SiGnubash } from "react-icons/si";
+import { RiNextjsLine } from "react-icons/ri";
+import { FaJava } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiCplusplus } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
@@ -89,8 +91,12 @@ const Technologies: React.FC = () => {
 						initial={{ opacity: 0, y: 60 }}
 						transition={{ duration: 1.5 }}
 						className="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-4 mx-auto">
-						<TooltipWithMotion text="React" duration={2.6}>
+						<TooltipWithMotion text="React & React Native" duration={2.6}>
 							<FaReact className="text-7xl text-sky-500" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="Next.js" duration={2.6}>
+							<RiNextjsLine className="text-7xl text-black dark:text-white" />
 						</TooltipWithMotion>
 
 						<TooltipWithMotion text="Typescript" duration={2.8}>
@@ -117,24 +123,24 @@ const Technologies: React.FC = () => {
 							<FaHtml5 className="text-7xl text-orange-600" />
 						</TooltipWithMotion>
 
-						<TooltipWithMotion text="Nodejs" duration={3.2}>
-							<FaNodeJs className="text-7xl text-green-500" />
+						<TooltipWithMotion text="Github" duration={3.2}>
+							<FaGithub className="text-7xl text-gray-800 dark:text-white" />
 						</TooltipWithMotion>
 
-						<TooltipWithMotion text="Postgresql" duration={3.3}>
-							<BiLogoPostgresql className="text-7xl text-sky-700" />
+						<TooltipWithMotion text="Nodejs" duration={3.3}>
+							<FaNodeJs className="text-7xl text-green-500" />
 						</TooltipWithMotion>
 
 						<TooltipWithMotion text="Bash" duration={3.4}>
 							<SiGnubash className="text-7xl text-neutral-800 dark:text-white" />
 						</TooltipWithMotion>
 
-						<TooltipWithMotion text="Github" duration={3.5}>
-							<FaGithub className="text-7xl text-gray-800 dark:text-white" />
-						</TooltipWithMotion>
-
 						<TooltipWithMotion text="C++" duration={3.5}>
 							<SiCplusplus className="text-7xl text-blue-600 dark:text-blue-400" />
+						</TooltipWithMotion>
+
+						<TooltipWithMotion text="Java" duration={3.6}>
+							<FaJava className="text-7xl text-orange-500" />
 						</TooltipWithMotion>
 					</motion.div>
 				</TooltipProvider>
