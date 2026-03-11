@@ -10,8 +10,7 @@ const Section = ({ children, className, id, noBorder = false, ...props }: Sectio
   return (
     <div
       id={id}
-      className={cn(
-        "widescreen:section-min-height tallscreen:section-min-height",
+      className={cn("pb-24",
         !noBorder && "border-b border-neutral-300 dark:border-neutral-900",
         className
       )}
