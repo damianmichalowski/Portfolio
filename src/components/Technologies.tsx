@@ -73,14 +73,14 @@ const Technologies: React.FC = () => {
 
   return (
     <Section id="technologies">
-      <h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
+      <h2 className="mt-20 mb-4 text-center text-4xl text-gray-900 dark:text-white">
         {t('technologies.title')}
       </h2>
       <motion.p
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
-        className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16"
+        className="mb-12 mx-auto max-w-2xl text-center text-gray-600 dark:text-gray-400"
       >
         {t('technologies.subtitle')}
       </motion.p>

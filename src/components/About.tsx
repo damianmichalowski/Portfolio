@@ -10,10 +10,10 @@ const About: React.FC = () => {
 
   return (
     <Section id="about">
-      <h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
+      <h2 className="mt-20 mb-4 text-center text-4xl text-gray-900 dark:text-white">
         {t('about.title')}
       </h2>
-      <p className="-mt-14 mb-12 text-center text-base text-gray-600 dark:text-neutral-400">
+      <p className="mb-12 text-center text-base text-gray-600 dark:text-neutral-400">
         {t('about.subtitle')}
       </p>
       <div className="grid gap-10 lg:grid-cols-3">

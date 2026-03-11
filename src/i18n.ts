@@ -91,7 +91,7 @@ const resources = {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         reference: 'Reference',
-        resume: 'Download CV',
+        resume: 'CV',
       },
       contact: {
         title: 'Get in Touch',

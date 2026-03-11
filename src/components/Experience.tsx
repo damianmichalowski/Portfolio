@@ -10,7 +10,7 @@ const Experience: React.FC = () => {
 
   return (
     <Section id="experience">
-      <h2 className="my-20 text-center text-4xl text-gray-900 dark:text-white">
+      <h2 className="mt-20 mb-12 text-center text-4xl text-gray-900 dark:text-white">
         {t('experience.title')}
       </h2>
       <motion.div
